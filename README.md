@@ -63,7 +63,7 @@ Update your Celestia app on the testnet to the latest version.
 source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/upgrade_testnet_app.sh)
 ~~~
 
-### 🔄 Upgrade Testnet Node  
+### 🔄 Upgrade Testnet Bridge  
 Ensure your testnet node runs the latest protocol updates.
 
 ~~~bash
@@ -77,7 +77,7 @@ Keep your Celestia app on the mainnet up-to-date.
 source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/upgrade_mainnet_app.sh)
 ~~~
 
-### 🔄 Upgrade Mainnet Node  
+### 🔄 Upgrade Mainnet Bridge  
 Upgrade your mainnet node for full protocol compatibility.
 
 ~~~bash
