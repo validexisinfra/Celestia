@@ -4,23 +4,14 @@ set -e
 
 # Colors for better readability
 GREEN="\e[32m"
-RED="\e[31m"
 NC="\e[0m"
 
 print() {
     echo -e "${GREEN}$1${NC}"
 }
 
-print_error() {
-    echo -e "${RED}$1${NC}"
-}
-
-# Prompt the user interactively (no checks before prompt)
-echo -e "${GREEN}Enter your RPC_NODE_IP (example: 123.456.789.101):${NC}"
-read RPC_NODE_IP
-
-# Validate user input
-if [ -]()
+# Prompt for RPC_NODE_IP
+read -p "Enter your RPC_NODE_IP: " RPC_NODE_IP
 
 print "Updating system and installing dependencies..."
 sudo apt update && sudo apt upgrade -y
