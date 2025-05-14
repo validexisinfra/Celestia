@@ -1,0 +1,80 @@
+#!/bin/bash
+
+set -e
+
+# Colors for better readability
+GREEN="\e[32m"
+RED="\e[31m"
+NC="\e[0m"
+
+print() {
+    echo -e "${GREEN}$1${NC}"
+}
+
+print_error() {
+    echo -e "${RED}$1${NC}"
+}
+
+# Check if RPC_NODE_IP is set
+if [ -z "$RPC_NODE_IP" ]; then
+    print_error "Error: Please set the RPC_NODE_IP variable before running the script."
+    echo "Example: export RPC_NODE_IP=123.456.789.101"
+    exit 1
+fi
+
+print "Updating system and installing dependencies..."
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
+
+print "Installing Go 1.23.6..."
+sudo rm -rf /usr/local/go
+curl -Ls https://go.dev/dl/go1.23.6.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh
+echo 'export PATH=$PATH:$HOME/go/bin' >> $HOME/.profile
+echo "export PATH=\$PATH:/usr/local/go/bin:\$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+go version
+
+print "Building Celestia Node (v0.22.2)..."
+cd $HOME
+rm -rf celestia-node
+git clone https://github.com/celestiaorg/celestia-node.git
+cd celestia-node
+git checkout tags/v0.22.2
+make build
+sudo make install
+make cel-key
+
+print "Initializing Celestia Bridge Node..."
+celestia bridge init --core.ip $RPC_NODE_IP
+
+print "Listing your Bridge Node wallet address..."
+$HOME/celestia-node/cel-key list --node.type bridge --keyring-backend test
+
+print "Creating systemd service for Celestia Bridge..."
+sudo tee /etc/systemd/system/celestia-bridge.service > /dev/null <<EOF
+[Unit]
+Description=Celestia Bridge Node
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which celestia) bridge start --archival \\
+  --metrics.tls=true --metrics --metrics.endpoint otel.celestia.observer
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+print "Enabling and starting Celestia Bridge Node..."
+sudo systemctl daemon-reload
+sudo systemctl enable celestia-bridge
+sudo systemctl restart celestia-bridge
+
+print "You can now monitor the Bridge Node logs using:"
+echo "  sudo journalctl -u celestia-bridge -f"
+
+print "✅ Setup complete!"
