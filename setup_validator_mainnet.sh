@@ -14,12 +14,16 @@ print_error() {
     echo -e "${RED}$1${NC}"
 }
 
-# Check if MONIKER is set
+# Prompt the user to set MONIKER if it's not already set
+read -p "Please enter your MONIKER value: " MONIKER
+
+# If MONIKER is still empty, exit with an error
 if [ -z "$MONIKER" ]; then
-    print_error "Error: Please set the MONIKER variable before running the script."
-    echo "Example: export MONIKER=mycelestianode"
+    print_error "Error: You must set the MONIKER variable to proceed."
     exit 1
 fi
+
+print "MONIKER has been set to: $MONIKER"
 
 print "=== Updating system and installing dependencies ==="
 sudo apt update && sudo apt upgrade -y
