@@ -15,12 +15,16 @@ print_error() {
     echo -e "${RED}$1${NC}"
 }
 
-# Check if RPC_NODE_IP is set
+# Prompt the user to set RPC_NODE_IP
+read -p "Please enter your RPC_NODE_IP (example: 123.456.789.101): " RPC_NODE_IP
+
+# Check if still empty
 if [ -z "$RPC_NODE_IP" ]; then
-    print_error "Error: Please set the RPC_NODE_IP variable before running the script."
-    echo "Example: export RPC_NODE_IP=123.456.789.101"
+    print_error "Error: You must provide the RPC_NODE_IP to proceed."
     exit 1
 fi
+
+print "RPC_NODE_IP has been set to: $RPC_NODE_IP"
 
 print "Updating system and installing dependencies..."
 sudo apt update && sudo apt upgrade -y
