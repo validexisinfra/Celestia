@@ -13,8 +13,8 @@ Set up a Validator Node on the Mocha-4 testnet to securely participate in block 
 source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/setup_validator_testnet.sh)
 ~~~
 
-### ⚙️ Full Node Setup  
-Deploy a Full Node that stores the entire blockchain and verifies transactions.
+### ⚙️ Consensus Full Node Setup  
+Deploy a Consensus Full Node that stores the entire blockchain and verifies transactions.
 
 ~~~bash
 source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/setup_fullnode_testnet.sh)
@@ -38,11 +38,11 @@ Deploy a Validator Node on Celestia Mainnet and contribute to network security.
 source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/setup_validator_mainnet.sh)
 ~~~
 
-### ⚙️ Full Node Setup  
-Run a Full Node to store all blockchain data and ensure transaction validation.
+### ⚙️ Consensus Full Node Setup  
+Run a Consensus Full Node to store all blockchain data and ensure transaction validation.
 
 ~~~bash
-source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/setup_fullnode_mainnet.sh)
+source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/setup_archiv_mainnet.sh)
 ~~~
 
 ### ⚙️ Bridge Node Setup  
