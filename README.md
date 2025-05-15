@@ -17,7 +17,7 @@ source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/
 Deploy a Consensus Full Node that stores the entire blockchain and verifies transactions.
 
 ~~~bash
-source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/setup_fullnode_testnet.sh)
+source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/setup_archiv_testnet.sh)
 ~~~
 
 ### ⚙️ Bridge Node Setup  
