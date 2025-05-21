@@ -15,7 +15,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 </p>
 
 ---
-
+<a name="security"></a>
 ## 🔐 Security & Monitoring  
 > _"Security first! Protect your Celestia node and monitor its health."_
 
@@ -39,7 +39,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 
 
 ---
-
+<a name="scripts"></a>
 ## ⚙️ Automation & Scripts  
 > _"Save time with powerful scripts for automation."_ 
 
