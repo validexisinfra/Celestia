@@ -87,5 +87,29 @@ wget -O $HOME/.celestia-app/config/genesis.json https://testnets.validexis.com/c
 ```
 ---
 
+## 🗂️ Snapshots
+
+> _Ready-to-use Celestia snapshots (Pruned, Archive, and Bridge) by Validexis._
+
+#### 🔵 Mainnet Snapshots
+
+📦 Available types at  
+[`https://services.validexis.com/mainnets/celestia/snapshot`](https://services.validexis.com/mainnets/celestia/snapshot):
+
+- ♻️ **Pruned Node Snapshot** — faster sync, minimal storage  
+- 🗃️ **Archive Node Snapshot** — full history, for indexers  
+- 🌉 **Bridge Node Snapshot** — for Celestia Bridge nodes
+
+#### 🧪 Testnet Snapshots
+
+📦 Available types at  
+[`https://services.validexis.com/testnets/celestia/snapshot`](https://services.validexis.com/testnets/celestia/snapshot):
+
+- ♻️ **Pruned Node Snapshot** — faster sync, minimal storage  
+- 🗃️ **Archive Node Snapshot** — full history, for indexers  
+- 🌉 **Bridge Node Snapshot** — for Celestia Bridge nodes
+
+---  
+
 ## 🤖 Bots & Notifications  
 > _"Stay informed with smart bots & alerts."_
