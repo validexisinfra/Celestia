@@ -14,8 +14,17 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 <a href="#bots--notifications">Bots</a>
 </p>
 
----
-<a name="security"></a>
+<h2 align="center">🌟 Quick Navigation</h2>
+
+<p align="center">
+📌 <a href="#security--monitoring"><b>Security</b></a> ・ 
+📖 <a href="#guides--tutorials"><b>Guides</b></a> ・ 
+⚙️ <a href="#automation--scripts"><b>Scripts</b></a> ・ 
+🗂️ <a href="#snapshots"><b>Snapshots</b></a> ・ 
+🤖 <a href="#bots--notifications"><b>Bots</b></a>
+</p>
+
+
 ## 🔐 Security & Monitoring  
 > _"Security first! Protect your Celestia node and monitor its health."_
 
@@ -39,7 +48,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 
 
 ---
-<a name="scripts"></a>
+
 ## ⚙️ Automation & Scripts  
 > _"Save time with powerful scripts for automation."_ 
 
