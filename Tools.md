@@ -10,7 +10,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 📖 <a href="#-guides--tutorials"><b>Guides</b></a> ・ 
 ⚙️ <a href="#-automation--scripts"><b>Scripts</b></a> ・
 🌐 <a href="#-networks--endpoints"><b>Endpoints</b></a> ・  
-🗂️ <a href="#-snapshots"><b>Snapshots</b></a> ・ 
+🗂️ <a href="#snapshots"><b>Snapshots</b></a> ・ 
 🤖 <a href="#-bots--notifications"><b>Bots</b></a>
 </p>
 
