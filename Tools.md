@@ -3,8 +3,16 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 
 ---
 
-## 🌟 Quick Navigation  
-📌 [Security](#-security--monitoring) | [Guides](#-guides--tutorials) | [Scripts](#-automation--scripts) | [Endpoints](#-networks--endpoints) | [Snapshots](#-snapshots) | [Bots](#-bots--notifications) 
+<h2 align="center">🌟 Quick Navigation</h2>
+
+<p align="center">
+📌 <a href="#security--monitoring">Security</a> |
+<a href="#guides--tutorials">Guides</a> |
+<a href="#automation--scripts">Scripts</a> |
+<a href="#networks--endpoints">Endpoints</a> |
+<a href="#snapshots">Snapshots</a> |
+<a href="#bots--notifications">Bots</a>
+</p>
 
 ---
 
