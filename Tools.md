@@ -61,7 +61,6 @@ wget -O $HOME/.celestia-app/config/addrbook.json https://mainnets.validexis.com/
 ```bash
 wget -O $HOME/.celestia-app/config/genesis.json https://mainnets.validexis.com/celestia/genesis.json
 ```
----
 
 ### 🧪 Testnet
 
