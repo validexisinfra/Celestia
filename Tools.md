@@ -4,7 +4,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ---
 
 ## 🌟 Quick Navigation  
-📌 [Security](#-security--monitoring) | [Guides](#-guides--tutorials) | [Scripts](#-automation--scripts) | [Bots](#-bots--notifications) | [Other Tools](#-other-tools)
+📌 [Security](#-security--monitoring) | [Guides](#-guides--tutorials) | [Scripts](#-automation--scripts) | [Endpoints](#-networks--endpoints) | [Bots](#-bots--notifications) 
 
 ---
 
