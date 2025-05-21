@@ -6,24 +6,15 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 <h2 align="center">🌟 Quick Navigation</h2>
 
 <p align="center">
-📌 <a href="#security--monitoring">Security</a> |
-<a href="#guides--tutorials">Guides</a> |
-<a href="#automation--scripts">Scripts</a> |
-<a href="#networks--endpoints">Endpoints</a> |
-<a href="#snapshots">Snapshots</a> |
-<a href="#bots--notifications">Bots</a>
+🔐 <a href="#-security--monitoring"><b>Security</b></a> ・ 
+📖 <a href="#-guides--tutorials"><b>Guides</b></a> ・ 
+⚙️ <a href="#-automation--scripts"><b>Scripts</b></a> ・
+🌐 <a href="#-networks--endpoints"><b>Endpoints</b></a> ・  
+🗂️ <a href="#-snapshots"><b>Snapshots</b></a> ・ 
+🤖 <a href="#-bots--notifications"><b>Bots</b></a>
 </p>
 
-<h2 align="center">🌟 Quick Navigation</h2>
-
-<p align="center">
-📌 <a href="#security--monitoring"><b>Security</b></a> ・ 
-📖 <a href="#guides--tutorials"><b>Guides</b></a> ・ 
-⚙️ <a href="#automation--scripts"><b>Scripts</b></a> ・ 
-🗂️ <a href="#snapshots"><b>Snapshots</b></a> ・ 
-🤖 <a href="#bots--notifications"><b>Bots</b></a>
-</p>
-
+---
 
 ## 🔐 Security & Monitoring  
 > _"Security first! Protect your Celestia node and monitor its health."_
