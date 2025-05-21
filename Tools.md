@@ -8,9 +8,9 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 <p align="center">
 🔐 <a href="#-security--monitoring"><b>Security</b></a> ・ 
 📖 <a href="#-guides--tutorials"><b>Guides</b></a> ・ 
-⚙️ <a href="#-automation--scripts"><b>Scripts</b></a> ・
+⚙️ <a href="#%EF%B8%8F-automation--scripts"><b>Scripts</b></a> ・
 🌐 <a href="#-networks--endpoints"><b>Endpoints</b></a> ・  
-🗂️ <a href="#-snapshots"><b>Snapshots</b></a> ・ 
+🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a> ・ 
 🤖 <a href="#-bots--notifications"><b>Bots</b></a>
 </p>
 
