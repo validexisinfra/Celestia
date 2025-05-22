@@ -51,6 +51,11 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 - 🔄 Upgrade → [Testnet](https://services.validexis.com/testnets/celestia/bridge-node-installation/upgrade) | [Mainnet](https://services.validexis.com/mainnets/celestia/bridge-node-installation/upgrade)  
 - 📄 Useful Commands → [Testnet](https://services.validexis.com/testnets/celestia/bridge-node-installation/useful-commands) | [Mainnet](https://services.validexis.com/mainnets/celestia/bridge-node-installation/useful-commands)
 
+### 💡 Light Node Guides  
+- 🔧 Install → [Testnet](https://services.validexis.com/testnets/celestia/light-node-installation) | [Mainnet](https://services.validexis.com/mainnets/celestia/light-node-installation)  
+- 🔄 Upgrade → [Testnet](https://services.validexis.com/testnets/celestia/light-node-installation/upgrade) | [Mainnet](https://services.validexis.com/mainnets/celestia/light-node-installation/upgrade)  
+- 📄 Useful Commands → [Testnet](https://services.validexis.com/testnets/celestia/light-node-installation/useful-commands) | [Mainnet](https://services.validexis.com/mainnets/celestia/light-node-installation/useful-commands)
+
 ---
 
 ## ⚙️ Automation & Scripts  
