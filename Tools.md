@@ -150,3 +150,16 @@ wget -O $HOME/.celestia-app/config/genesis.json https://testnets.validexis.com/c
 
 ## 🤖 Bots & Notifications  
 > _"Stay informed with smart bots & alerts."_
+
+We present to you **Celestia UltraBot** - a versatile tool for participants in the Celestia ecosystem. The bot provides real-time information on staking, validator monitoring, and AI-powered solutions.  
+
+With Celestia UltraBot, you can:  
+
+✅ Track validator performance  
+✅ Receive detailed earnings reports  
+✅ Manage wallet balances  
+✅ Get instant notifications about key network events  
+✅ Utilize AI support for technical issues  
+✅ Stay updated on governance proposals and network news  
+
+All features are easily accessible via Telegram, ensuring seamless access to essential information anytime! 🚀  
