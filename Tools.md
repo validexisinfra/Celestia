@@ -11,7 +11,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ⚙️ <a href="#%EF%B8%8F-automation--scripts"><b>Scripts</b></a> ・
 🌐 <a href="#-networks--endpoints"><b>Endpoints</b></a> ・  
 🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a> ・ 
-🗂️ <a href="#%EF%B8%8F-snapshots"><b>IBC Relayer</b></a> ・   
+📡 <a href="#-ibc-relayer"><b>IBC Relayer</b></a> ・   
 🤖 <a href="#-bots--notifications"><b>Bots</b></a> ・ 
 🛰️ <a href="#%EF%B8%8F-x-activities"><b>X Activities</b></a>  
 </p>
@@ -157,7 +157,7 @@ wget -O $HOME/.celestia-app/config/genesis.json https://testnets.validexis.com/c
 -  [Connecting Celestia to IBC with Hermes](https://services.validexis.com/setting-up-connection-to-ibc-with-hermes)  
   Detailed tutorial on configuring Hermes relayer to establish IBC connectivity for your Celestia node.
 
-### 🌐 Relaying Dashboard  
+### 🧬 Relayer Status  
 -  [Validexis Relayer on SmartStake](https://relayers.smartstake.io/relayer/34DA4858CF0FBA77)  
   Real-time IBC relaying metrics, channel statuses, and transaction flow from Validexis.
 
