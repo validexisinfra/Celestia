@@ -11,7 +11,8 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ⚙️ <a href="#%EF%B8%8F-automation--scripts"><b>Scripts</b></a> ・
 🌐 <a href="#-networks--endpoints"><b>Endpoints</b></a> ・  
 🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a> ・ 
-🤖 <a href="#-bots--notifications"><b>Bots</b></a>
+🤖 <a href="#-bots--notifications"><b>Bots</b></a> ・ 
+🤖 <a href="#-x activities"><b>X Activities</b></a>  
 </p>
 
 ---
@@ -178,3 +179,17 @@ Participate in the [**Celestia UltraBot Twitter Challenge**](https://services.va
 Top participants will be rewarded based on their activity and creativity. This is a great opportunity to both support the network and earn rewards!
 
 Learn more and join the challenge here: [https://services.validexis.com/celestiaultrabot/contest](https://services.validexis.com/celestiaultrabot/contest)
+
+---
+
+## 🛰️ X Activities  
+> _Stay updated with our latest developments and tools for the Celestia ecosystem._
+
+-  [Celestia Bridges: A New Era of Scalability & Security](https://x.com/validexis/status/1894354657708786121)  
+  Discover how Celestia is revolutionizing blockchain scalability with innovative bridge solutions.
+
+-  [Effortless Validator Management with CelestiaUltraBot](https://x.com/validexis/status/1894654995074592833)  
+  Maximize your staking experience using our unique bot designed for seamless validator operations.
+
+-  [Effortless Reward Tracking with CelestiaUltraBot](https://x.com/validexis/status/1895033853309227323)  
+  Easily monitor your balance and gain insights into your current and projected rewards.
