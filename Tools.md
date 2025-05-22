@@ -17,20 +17,19 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ---
 
 ## 🔐 Security & Monitoring  
-> _"Security first! Protect your Celestia node and monitor its health."_
+> _"Security first! Protect your Celestia node and monitor its health."_  
+> _Take advantage of our step-by-step guides to secure and monitor your validator node._
 
-### 🛡️ Validator Security
-- 🔒 [Enhancing SSH Security for a Validator](https://services.validexis.com/validator-security-our-approach-and-protection-measures/enhancing-ssh-security-for-a-validator)  
-- 🧑‍💻 [TMKMS for Remote Signing](https://services.validexis.com/validator-security-our-approach-and-protection-measures/tmkms-for-remote-signing)  
-- 🔑 [Horcrux](https://services.validexis.com/validator-security-our-approach-and-protection-measures/horcrux)  
-- 🛡️ [Protecting Validator from DDoS Attacks](https://services.validexis.com/validator-security-our-approach-and-protection-measures/protecting-validator-from-ddos-attacks)  
-- 🧬 [Multi-Factor Authentication (MFA) for a Validator](https://services.validexis.com/validator-security-our-approach-and-protection-measures/multi-factor-authentication-mfa-for-a-validator)
+### 🛡️ Validator Security  
+- 🔒 [Enhancing SSH Security for a Validator](https://services.validexis.com/validator-security-our-approach-and-protection-measures/enhancing-ssh-security-for-a-validator) — Harden SSH access to reduce unauthorized login attempts.  
+- 🧑‍💻 [TMKMS for Remote Signing](https://services.validexis.com/validator-security-our-approach-and-protection-measures/tmkms-for-remote-signing) — Use Tendermint Key Management System for secure remote signing.  
+- 🔑 [Horcrux](https://services.validexis.com/validator-security-our-approach-and-protection-measures/horcrux) — Implement threshold signing by splitting validator keys.  
+- 🛡️ [Protecting Validator from DDoS Attacks](https://services.validexis.com/validator-security-our-approach-and-protection-measures/protecting-validator-from-ddos-attacks) — Set up defenses against network overloads and attacks.  
+- 🧬 [Multi-Factor Authentication (MFA) for a Validator](https://services.validexis.com/validator-security-our-approach-and-protection-measures/multi-factor-authentication-mfa-for-a-validator) — Add an extra layer of identity verification.
 
-### 🚨 Monitoring
-- 📊 [Node-exporter + Prometheus + Grafana](https://services.validexis.com/monitoring/node-exporter-+-prometheus-+-grafana)  
-- 🧭 [TenderDuty for Node Monitoring](https://services.validexis.com/monitoring/tenderduty-for-node-monitoring)
-
-
+### 🚨 Monitoring  
+- 📊 [Node-exporter + Prometheus + Grafana](https://services.validexis.com/monitoring/node-exporter-+-prometheus-+-grafana) — Collect and visualize metrics with Prometheus & Grafana stack.  
+- 🧭 [TenderDuty for Node Monitoring](https://services.validexis.com/monitoring/tenderduty-for-node-monitoring) — Receive alerts when your validator misses blocks or goes offline.
 
 ---
 
