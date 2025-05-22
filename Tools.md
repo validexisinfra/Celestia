@@ -12,7 +12,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 🌐 <a href="#-networks--endpoints"><b>Endpoints</b></a> ・  
 🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a> ・ 
 🤖 <a href="#-bots--notifications"><b>Bots</b></a> ・ 
-🤖 <a href="#-x activities"><b>X Activities</b></a>  
+🛰️ <a href="#%EF%B8%8F-x-activities"><b>X Activities</b></a>  
 </p>
 
 ---
