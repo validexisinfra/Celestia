@@ -36,40 +36,20 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ## 📖 Guides & Tutorials  
 > _"Master Celestia step by step with these comprehensive guides."_
 
-### 🟢 Mainnet
+### 🛠 Validator Node Guides  
+- 🔧 Install → [Testnet](https://services.validexis.com/testnets/celestia/validator-node-installation) | [Mainnet](https://services.validexis.com/mainnets/celestia/validator-node-installation)  
+- 🔄 Upgrade → [Testnet](https://services.validexis.com/testnets/celestia/validator-node-installation/upgrade) | [Mainnet](https://services.validexis.com/mainnets/celestia/validator-node-installation/upgrade)  
+- 📄 Useful Commands → [Testnet](https://services.validexis.com/testnets/celestia/validator-node-installation/useful-commands) | [Mainnet](https://services.validexis.com/mainnets/celestia/validator-node-installation/useful-commands)
 
-#### 🔧 Validator Node Installation  
-- 🛠️ [Install](https://services.validexis.com/mainnets/celestia/validator-node-installation)  
-- 🔄 [Upgrade](https://services.validexis.com/mainnets/celestia/validator-node-installation/upgrade)  
-- 📄 [Useful Commands](https://services.validexis.com/mainnets/celestia/validator-node-installation/useful-commands)
+### 🧱 Consensus Full Node Guides  
+- 🔧 Install → [Testnet](https://services.validexis.com/testnets/celestia/full-node-installation) | [Mainnet](https://services.validexis.com/mainnets/celestia/full-node-installation)  
+- 🔄 Upgrade → [Testnet](https://services.validexis.com/testnets/celestia/full-node/upgrade) | [Mainnet](https://services.validexis.com/mainnets/celestia/full-node-installation/upgrade)  
+- 📄 Useful Commands → [Testnet](https://services.validexis.com/testnets/celestia/full-node-installation/useful-commands) | [Mainnet](https://services.validexis.com/mainnets/celestia/full-node-installation/useful-commands)
 
-#### 🧱 Consensus Full Node Installation  
-- 🛠️ [Install](https://services.validexis.com/mainnets/celestia/full-node-installation)  
-- 🔄 [Upgrade](https://services.validexis.com/mainnets/celestia/full-node-installation/upgrade)  
-- 📄 [Useful Commands](https://services.validexis.com/mainnets/celestia/full-node-installation/useful-commands)
-
-#### 🌉 Bridge Node Installation  
-- 🛠️ [Install](https://services.validexis.com/mainnets/celestia/bridge-node-installation)  
-- 🔄 [Upgrade](https://services.validexis.com/mainnets/celestia/bridge-node-installation/upgrade)  
-- 📄 [Useful Commands](https://services.validexis.com/mainnets/celestia/bridge-node-installation/useful-commands)
-
-
-### 🧪 Testnet
-
-#### 🔧 Validator Node Installation  
-- 🛠️ [Install](https://services.validexis.com/testnets/celestia/validator-node-installation)  
-- 🔄 [Upgrade](https://services.validexis.com/testnets/celestia/validator-node-installation/upgrade)  
-- 📄 [Useful Commands](https://services.validexis.com/testnets/celestia/validator-node-installation/useful-commands)
-
-#### 🧱 Consensus Full Node Installation  
-- 🛠️ [Install](https://services.validexis.com/testnets/celestia/full-node-installation)  
-- 🔄 [Upgrade](https://services.validexis.com/testnets/celestia/full-node/upgrade)  
-- 📄 [Useful Commands](https://services.validexis.com/testnets/celestia/full-node-installation/useful-commands)
-
-#### 🌉 Bridge Node Installation  
-- 🛠️ [Install](https://services.validexis.com/testnets/celestia/bridge-node-installation)  
-- 🔄 [Upgrade](https://services.validexis.com/testnets/celestia/bridge-node-installation/upgrade)  
-- 📄 [Useful Commands](https://services.validexis.com/testnets/celestia/bridge-node-installation/useful-commands)
+### 🌉 Bridge Node Guides  
+- 🔧 Install → [Testnet](https://services.validexis.com/testnets/celestia/bridge-node-installation) | [Mainnet](https://services.validexis.com/mainnets/celestia/bridge-node-installation)  
+- 🔄 Upgrade → [Testnet](https://services.validexis.com/testnets/celestia/bridge-node-installation/upgrade) | [Mainnet](https://services.validexis.com/mainnets/celestia/bridge-node-installation/upgrade)  
+- 📄 Useful Commands → [Testnet](https://services.validexis.com/testnets/celestia/bridge-node-installation/useful-commands) | [Mainnet](https://services.validexis.com/mainnets/celestia/bridge-node-installation/useful-commands)
 
 ---
 
