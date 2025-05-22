@@ -36,6 +36,40 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ## 📖 Guides & Tutorials  
 > _"Master Celestia step by step with these comprehensive guides."_
 
+### 🟢 Mainnet
+
+#### 🔧 Validator Node Installation  
+- 🛠️ [Install](https://services.validexis.com/mainnets/celestia/validator-node-installation)  
+- 🔄 [Upgrade](https://services.validexis.com/mainnets/celestia/validator-node-installation/upgrade)  
+- 📄 [Useful Commands](https://services.validexis.com/mainnets/celestia/validator-node-installation/useful-commands)
+
+#### 🧱 Consensus Full Node Installation  
+- 🛠️ [Install](https://services.validexis.com/mainnets/celestia/full-node-installation)  
+- 🔄 [Upgrade](https://services.validexis.com/mainnets/celestia/full-node-installation/upgrade)  
+- 📄 [Useful Commands](https://services.validexis.com/mainnets/celestia/full-node-installation/useful-commands)
+
+#### 🌉 Bridge Node Installation  
+- 🛠️ [Install](https://services.validexis.com/mainnets/celestia/bridge-node-installation)  
+- 🔄 [Upgrade](https://services.validexis.com/mainnets/celestia/bridge-node-installation/upgrade)  
+- 📄 [Useful Commands](https://services.validexis.com/mainnets/celestia/bridge-node-installation/useful-commands)
+
+
+### 🧪 Testnet
+
+#### 🔧 Validator Node Installation  
+- 🛠️ [Install](https://services.validexis.com/testnets/celestia/validator-node-installation)  
+- 🔄 [Upgrade](https://services.validexis.com/testnets/celestia/validator-node-installation/upgrade)  
+- 📄 [Useful Commands](https://services.validexis.com/testnets/celestia/validator-node-installation/useful-commands)
+
+#### 🧱 Consensus Full Node Installation  
+- 🛠️ [Install](https://services.validexis.com/testnets/celestia/full-node-installation)  
+- 🔄 [Upgrade](https://services.validexis.com/testnets/celestia/full-node/upgrade)  
+- 📄 [Useful Commands](https://services.validexis.com/testnets/celestia/full-node-installation/useful-commands)
+
+#### 🌉 Bridge Node Installation  
+- 🛠️ [Install](https://services.validexis.com/testnets/celestia/bridge-node-installation)  
+- 🔄 [Upgrade](https://services.validexis.com/testnets/celestia/bridge-node-installation/upgrade)  
+- 📄 [Useful Commands](https://services.validexis.com/testnets/celestia/bridge-node-installation/useful-commands)
 
 ---
 
@@ -56,7 +90,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ## 🌐 Networks & Endpoints  
 > _"Reliable endpoints, peers, and bootstrap files for Celestia Mainnet & Testnet by Validexis."_
 
-### 🔵 Mainnet
+### 🟢 Mainnet
 
 #### 🌐 Endpoints
 - 📡 **API**: [`https://api-celestia-mainnet.validexis.com/`](https://api-celestia-mainnet.validexis.com/)  
@@ -109,7 +143,7 @@ wget -O $HOME/.celestia-app/config/genesis.json https://testnets.validexis.com/c
 
 > _Ready-to-use Celestia snapshots (Pruned, Archive, and Bridge) by Validexis._
 
-#### 🔵 Mainnet Snapshots
+#### 🟢 Mainnet
 
 📦 Available types at  
 [`https://services.validexis.com/mainnets/celestia/snapshot`](https://services.validexis.com/mainnets/celestia/snapshot):
@@ -118,7 +152,7 @@ wget -O $HOME/.celestia-app/config/genesis.json https://testnets.validexis.com/c
 - 🗃️ **Archive Node Snapshot** — full history, for indexers  
 - 🌉 **Bridge Node Snapshot** — for Celestia Bridge nodes
 
-#### 🧪 Testnet Snapshots
+#### 🧪 Testnet
 
 📦 Available types at  
 [`https://services.validexis.com/testnets/celestia/snapshot`](https://services.validexis.com/testnets/celestia/snapshot):
