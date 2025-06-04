@@ -19,19 +19,19 @@ sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -
 
 print "Installing Go 1.23.6..."
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.23.6.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+curl -Ls https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
 echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh
 echo 'export PATH=$PATH:$HOME/go/bin' >> $HOME/.profile
 echo "export PATH=\$PATH:/usr/local/go/bin:\$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
 
-print "Building Celestia Node (v0.22.2)..."
+print "Building Celestia Node (v0.23.1)..."
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node
 cd celestia-node/
-git checkout tags/v0.22.2-mocha
+git checkout tags/v0.23.1-mocha
 make build 
 sudo make install 
 make cel-key
