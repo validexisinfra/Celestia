@@ -5,7 +5,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 
 <h2 align="center">🌟 Quick Navigation</h2>
 
-<p align="center">
+<p align="center" style="white-space: nowrap;">
 🔐 <a href="#-security--monitoring"><b>Security</b></a> ・ 
 📖 <a href="#-guides--tutorials"><b>Guides</b></a> ・ 
 ⚙️ <a href="#%EF%B8%8F-automation--scripts"><b>Scripts</b></a> ・
