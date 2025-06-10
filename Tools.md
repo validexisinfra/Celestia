@@ -5,18 +5,18 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 
 <h2 align="center">🌟 Quick Navigation</h2>
 
-<div style="overflow-x: auto;">
-<p align="center" style="white-space: nowrap;">
-🔐 <a href="#-security--monitoring"><b>Security</b></a> ・ 
-📖 <a href="#-guides--tutorials"><b>Guides</b></a> ・ 
-⚙️ <a href="#%EF%B8%8F-automation--scripts"><b>Scripts</b></a> ・
-🌐 <a href="#-networks--endpoints"><b>Endpoints</b></a> ・  
-🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a> ・ 
-📡 <a href="#-ibc-relayer"><b>IBC Relayer</b></a> ・   
-🤖 <a href="#-bots--notifications"><b>Bots</b></a> ・ 
-🖥️ <a href="#%EF%B8%8F-celestia-bridge-explorer"><b>Bridge Explorer</b></a> ・ 
-🛰️ <a href="#%EF%B8%8F-x-activities"><b>X Activities</b></a>  
-</p>
+<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
+
+<span>🔐 <a href="#-security--monitoring"><b>Security</b></a></span>
+<span>📖 <a href="#-guides--tutorials"><b>Guides</b></a></span>
+<span>⚙️ <a href="#%EF%B8%8F-automation--scripts"><b>Scripts</b></a></span>
+<span>🌐 <a href="#-networks--endpoints"><b>Endpoints</b></a></span>
+<span>🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a></span>
+<span>📡 <a href="#-ibc-relayer"><b>IBC Relayer</b></a></span>
+<span>🤖 <a href="#-bots--notifications"><b>Bots</b></a></span>
+<span>🖥️ <a href="#%EF%B8%8F-celestia-bridge-explorer"><b>Bridge Explorer</b></a></span>
+<span>🛰️ <a href="#%EF%B8%8F-x-activities"><b>X Activities</b></a></span>
+
 </div>
 
 ---
