@@ -13,7 +13,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a> ・ 
 📡 <a href="#-ibc-relayer"><b>IBC Relayer</b></a> ・   
 🤖 <a href="#-bots--notifications"><b>Bots</b></a> ・ 
-🖥️ <a href="#%EF%B8%8F-celestia-bridge-explorer"><b>Bridge explorer</b></a> ・ 
+🖥️ <a href="#%EF%B8%8F-celestia-bridge-explorer"><b>Bridge Explorer</b></a> ・      
 🛰️ <a href="#%EF%B8%8F-x-activities"><b>X Activities</b></a>  
 </p>
 
