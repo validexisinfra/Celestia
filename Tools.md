@@ -5,6 +5,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 
 <h2 align="center">🌟 Quick Navigation</h2>
 
+<div style="overflow-x: auto;">
 <p align="center" style="white-space: nowrap;">
 🔐 <a href="#-security--monitoring"><b>Security</b></a> ・ 
 📖 <a href="#-guides--tutorials"><b>Guides</b></a> ・ 
@@ -13,9 +14,10 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a> ・ 
 📡 <a href="#-ibc-relayer"><b>IBC Relayer</b></a> ・   
 🤖 <a href="#-bots--notifications"><b>Bots</b></a> ・ 
-🖥️ <a href="#%EF%B8%8F-celestia-bridge-explorer"><b>Bridge Explorer</b></a> ・      
+🖥️ <a href="#%EF%B8%8F-celestia-bridge-explorer"><b>Bridge Explorer</b></a> ・ 
 🛰️ <a href="#%EF%B8%8F-x-activities"><b>X Activities</b></a>  
 </p>
+</div>
 
 ---
 
