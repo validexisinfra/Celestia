@@ -13,6 +13,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a> ・ 
 📡 <a href="#-ibc-relayer"><b>IBC Relayer</b></a> ・   
 🤖 <a href="#-bots--notifications"><b>Bots</b></a> ・ 
+🖥️ <a href="#-celestia-bridge-explorer"><b>Bridge explorer</b></a> ・ 
 🛰️ <a href="#%EF%B8%8F-x-activities"><b>X Activities</b></a>  
 </p>
 
@@ -193,6 +194,16 @@ Participate in the [**Celestia UltraBot Twitter Challenge**](https://services.va
 Top participants will be rewarded based on their activity and creativity. This is a great opportunity to both support the network and earn rewards!
 
 Learn more and join the challenge here: [https://services.validexis.com/celestiaultrabot/contest](https://services.validexis.com/celestiaultrabot/contest)
+
+---
+
+## 🖥️ Celestia Bridge Explorer  
+> _Visualize and monitor the performance of Celestia bridge nodes._
+
+### 🌐 Dashboard  
+- 🖥️ [Celestia Bridge Explorer](https://celestiabridge.com/)  
+  **Celestia Bridge Explorer** is a web-based dashboard that visualizes the performance, uptime, sync status, geographic distribution, and upgrade adoption of Celestia bridge nodes using open OTEL metrics.  
+  Built for both the community and the Celestia core team, it enables real-time monitoring of bridge reliability, upgrade responsiveness, and overall network health in a single, accessible interface.
 
 ---
 
