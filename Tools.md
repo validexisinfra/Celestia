@@ -209,6 +209,37 @@ Learn more and join the challenge here: [https://services.validexis.com/celestia
   **Celestia Bridge Explorer** is a web-based dashboard that visualizes the performance, uptime, sync status, geographic distribution, and upgrade adoption of Celestia bridge nodes using open OTEL metrics.  
   Built for both the community and the Celestia core team, it enables real-time monitoring of bridge reliability, upgrade responsiveness, and overall network health in a single, accessible interface.
 
+### 📈 Overview
+
+- Tracks **uptime**, **sync status**, and **version adoption** across all bridge nodes.
+- Shows **decentralization trends** by provider, country, region, and city.
+- Offers real-time insight into **performance metrics** like latency, memory usage, and GC pause.
+
+### 🔄 Upgrades
+
+- Displays current **version status** and **24h adoption rate** after each release.
+- Links each release to an **OTEL snapshot** for transparent, time-consistent upgrade tracking.
+- Useful for assessing upgrade responsiveness — especially important for **Foundation Delegation**.
+
+### 🛠️ Node Details
+
+- Full technical profiles for each bridge node:
+  - Software version, uptime, sync status.
+  - Hosting provider, geographic location.
+  - Real-time latency and performance charts.
+- Includes upgrade history with 24h adoption markers and snapshot references.
+- Node scoring across **reliability**, **performance**, and **decentralization**.
+
+### 📊 Analytics
+
+- Global analytics view of bridge network health.
+- Metrics include:
+  - 🧠 Memory usage  
+  - ⚡ Latency & GC pause  
+  - 🚫 Missed blocks  
+  - 💰 Staked tokens
+- Integrated with **Telegram alerts** (via CelestiaUltraBot) for validator activity, wallet transactions, bridge performance, and staking events.
+
 ---
 
 ## 🛰️ X Activities  
