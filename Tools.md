@@ -90,20 +90,20 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 - 🔌 **gRPC**: `grpc-celestia-mainnet.validexis.com:443`
 
 #### 🛠️ Ports
-- 📍 **RPC**: `26657`  
-- 📍 **gRPC**: `9090`
+- 📍 **RPC**: `37657`  
+- 📍 **gRPC**: `37090`
 
 #### 🤝 Persistent Peer
 - 🔗 `60d481edb7e49efe01fa0b49a346cf9f8400db19@peer-celestia-mainnet.validexis.com:26656`
 
 #### 🧩 AddrBook (updated hourly)
 ```bash
-wget -O $HOME/.celestia-app/config/addrbook.json https://mainnets.validexis.com/celestia/addrbook.json
+wget -O $HOME/.celestia-app/config/addrbook.json https://mainnets1.validexis.com/celestia/addrbook.json
 ```
 
 #### 📜 Genesis File
 ```bash
-wget -O $HOME/.celestia-app/config/genesis.json https://mainnets.validexis.com/celestia/genesis.json
+wget -O $HOME/.celestia-app/config/genesis.json https://mainnets1.validexis.com/celestia/genesis.json
 ```
 
 ### 🧪 Testnet
