@@ -128,6 +128,13 @@ wget -O $HOME/.celestia-app/config/genesis.json https://mainnets1.validexis.com/
 #### 🤝 Persistent Peer
 - 🔗 `fac5acd6540dd788dc804c8bd307b5169e666e68@peer-celestia-testnet.validexis.com:26656`
 
+#### 🤝 Seed
+- 🔗 `30a8f6668043544ee2d9af9369f0f68ff8cf2c43@seed-celestia-testnet.validexis.com:26656`
+
+#### 🤝 Live peer (20 active)
+- 🔗 `PEERS="5d0bf034d6e6a8b5ee31a2f42f753f1107b3a00e@65.108.75.179:11656,89cca749b0eab33db47da6015bc5f3845c361964@167.172.30.82:26656,ef713a1700508c9c6a46cc2b61b41a6fa59ac53d@136.243.94.113:26656,227f9c3bf41779ab70187b781cf4de3f387870f0@51.89.21.142:26656,2e28ae4affb16877f4dba754fd4ba5509f669c5f@94.130.221.170:26656,0d25acebc3c65a6e90d0f9b448d4f2f47e5de55e@217.28.56.148:26656,d934662d22d0bec1278efdbd07dbb9d60df19578@69.10.50.106:26656,a671bff674d133c1bda5fcda0f868ab9b9d35c5e@141.95.84.27:11156,c6c64db87b28d0485dac5bd2381571e5a95527a0@195.154.82.221:26656,4bfe0648bb390ad1012a1a6cdaa0d5d2929a4a9e@168.119.1.186:26656,5ccb40cbb73d526d4023c15ff2fc1acb651680ff@65.108.140.113:26656,2d5202ae009afdba844e24cc6084ff28dc420f98@135.181.117.37:60656,5c6ded448effa955923066db15620a70104ba3cf@149.50.101.126:36656,ed0c1430b6f8faf6517256659d8ab45972448d40@95.110.229.165:26656,ad7472364adba01b29b6a5f4fe1fe0cc4d698f45@65.21.142.108:26656,6006cd224fc96f3eb11ef50d6e2bd8e40c37010c@208.72.154.38:24656,5844e69b0970832510c91f709900519336deef99@158.179.219.12:26656,2d226cf06e6ee0073257b60049841d5a9be8e258@185.100.10.109:26656,f05e6a065b772dda4c7c0cbed40894a8c43416c7@51.15.15.123:26656,94035b3187ebfeeadffdae4dc69292ad06b581a2@65.109.92.217:34656,e4ab3ce43a64f9ca81adec3bf864c6977fce2441@46.4.105.119:26630,70e9fe212bcc270f77e10ee26eeea45500823c5c@65.109.117.151:26756,8e2edd15547b02189b827a49a6272c1af69a9d95@65.21.136.219:10026,f4d9be25c223c4db8838c3e26a56a410d9ce3d18@45.76.178.27:26656,6bfb98f919b8e655cc99938a18140aa4cedf6518@88.218.224.72:26656,16c5b4463706f49d2db19d3288516efc50582000@65.21.233.188:11656,a728db0dec6183dd8ee775771ab8a0ae48664c6d@176.9.127.54:2000,20c6e72c7cd3b3b37f88d703217576b4f72936d4@185.185.51.34:26656,ebee4d7f7fe6e0fa3e0e0594c8cfa23b6b10aeea@162.55.65.137:11656,08dae22d4e28e45effded11480df2713adcef05b@176.9.120.85:11656"
+sed -i -e "/^[p2p]/,/^[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.celestia-app/config/config.toml`
+
 #### 🧩 AddrBook (updated hourly)
 ```bash
 wget -O $HOME/.celestia-app/config/addrbook.json https://testnets.validexis.com/celestia/addrbook.json
@@ -137,6 +144,10 @@ wget -O $HOME/.celestia-app/config/addrbook.json https://testnets.validexis.com/
 ```bash
 wget -O $HOME/.celestia-app/config/genesis.json https://testnets.validexis.com/celestia/genesis.json
 ```
+
+#### 📥 State Syns
+[`https://services.validexis.com/testnets/celestia/state-syns`](https://services.validexis.com/mainnets/celestia/state-syns)
+
 ---
 
 ## 🗂️ Snapshots
