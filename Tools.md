@@ -121,10 +121,6 @@ wget -O $HOME/.celestia-app/config/genesis.json https://mainnets1.validexis.com/
 - 🔗 **RPC**: [`https://rpc-celestia-testnet.validexis.com/`](https://rpc-celestia-testnet.validexis.com/)  
 - 🔌 **gRPC**: `grpc-celestia-testnet.validexis.com:443`
 
-#### 🛠️ Ports
-- 📍 **RPC**: `26657`  
-- 📍 **gRPC**: `9090`
-
 #### 🤝 Persistent Peer
 - 🔗 `fac5acd6540dd788dc804c8bd307b5169e666e68@peer-celestia-testnet.validexis.com:26656`
 
