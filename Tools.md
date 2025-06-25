@@ -89,12 +89,15 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 - 🔗 **RPC**: [`https://rpc-celestia-mainnet.validexis.com/`](https://rpc-celestia-mainnet.validexis.com/)  
 - 🔌 **gRPC**: `grpc-celestia-mainnet.validexis.com:443`
 
-#### 🛠️ Ports
-- 📍 **RPC**: `37657`  
-- 📍 **gRPC**: `37090`
-
 #### 🤝 Persistent Peer
-- 🔗 `60d481edb7e49efe01fa0b49a346cf9f8400db19@peer-celestia-mainnet.validexis.com:26656`
+- 🔗 `a48c5bb03ff416f6cb0245e0aa42523cc6c9f430@peer-celestia-mainnet.validexis.com:26656`
+
+#### 🤝 Seed
+- 🔗 `0074b06d366fe8e1d6a2a53b6752bd55e33267f6@seed-celestia-mainnet.validexis.com:37656`
+
+#### 🤝 Live peer (20 active)
+- 🔗 `PEERS="d2faee0c04be9a813223db1491c05843eaf4db9f@162.249.168.149:26656,6f7ac7b93950aa548d2eeac482d4262659cacd24@176.9.124.52:11656,0c8ec01f1c37734274e7ac2f91021a55194bb0bb@65.109.26.242:11656,8449c9c28976ce556a47cfeee075f92f482818bb@65.109.116.50:11656,b35ff7f853eb424f5e8d2eb53540564913490f4b@195.201.106.166:11656,862dbd738c850a8d46374c965639c626f293e1a2@3.36.39.77:26656,b519fc0c69726b43de28b82f998c8db7faf9741d@5.9.89.67:15670,453f91c346b9a9a89506f6d0452a46fdd2e8069d@65.108.229.11:26656,c4a985404298c96e9eb3c87185268854e5bd51c2@43.202.190.82:26656,dd533d82b1207e4e3cf648fbb6fc18448dd098f3@124.243.184.78:26656,90e6e5d0a602857841886332e179a699582234d3@185.100.10.34:26656,71fa05f1ff6031224c4c175e03a3a9f5ed560158@38.58.176.180:26656,6c409d1dc48b108b60227b6897adc7c6bbaa893d@43.202.25.67:26656,45c8627df8b9767365cf6a52ab6ad46c933df0ee@64.31.14.2:26656,a7ca111a7a4951caaeb595c41b049bc8300202b1@67.209.54.198:26656,e8e212f82dec998f4c5a5f8a828a1ab3bf30de39@169.155.171.105:26656,edc6bc6ee3c37a698225e17bd4b8c687ee05f977@138.201.63.42:26756,284313184f63d9f06b218a67a0e2de126b64258d@136.60.129.34:15048,4f85259b8743dd464612724fc30ee303d22eb43e@116.202.220.238:29659,6a1e1fd9f5a2ee93c86a8657ab329f11648b91dc@65.109.93.17:11633"
+sed -i -e "/^[p2p]/,/^[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.celestia-app/config/config.toml`
 
 #### 🧩 AddrBook (updated hourly)
 ```bash
