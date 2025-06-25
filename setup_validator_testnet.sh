@@ -47,19 +47,18 @@ git checkout v4.0.3-mocha
 make install
 
 print "=== Configuring node ==="
-celestia-appd config chain-id mocha-4
-celestia-appd config keyring-backend file
-celestia-appd config node tcp://localhost:26657
+celestia-appd config set client chain-id mocha-4
+celestia-appd config set client keyring-backend file
+celestia-appd config set client node tcp://localhost:26657
 celestia-appd init $MONIKER --chain-id mocha-4
 
 print "=== Downloading genesis and addrbook ==="
-wget -O $HOME/.celestia-app/config/genesis.json https://server-5.itrocket.net/testnet/celestia/genesis.json
-wget -O $HOME/.celestia-app/config/addrbook.json  https://server-5.itrocket.net/testnet/celestia/addrbook.json
+wget -O $HOME/.celestia-app/config/genesis.json https://testnets1.validexis.com/celestia/genesis.json
+wget -O $HOME/.celestia-app/config/addrbook.json https://testnets1.validexis.com/celestia/addrbook.json
 
 print "=== Configuring peers and seeds ==="
-SEEDS="5d0bf034d6e6a8b5ee31a2f42f753f1107b3a00e@celestia-testnet-seed.itrocket.net:11656"
-PEERS="daf2cecee2bd7f1b3bf94839f993f807c6b15fbf@celestia-testnet-peer.itrocket.net:11656,36c18ca2aae40a8143ce84809092a64f99edb502@162.250.127.226:36656,cee58e7a8724fea3022be98898d7346d12a0ef80@164.152.162.119:36656,e726816f42831689eab9378d5d577f1d06d25716@164.152.163.148:36656,c17c0cbf05e98656fee5f60fad469fc528f6d6de@65.109.25.113:11656,85aef6d15d0197baff696b6e31c88e0f21073c59@162.55.245.144:2400,f05e6a065b772dda4c7c0cbed40894a8c43416c7@163.172.218.211:26656,7acb49ef77a268b8ae134ad9db3632c933e5013a@212.83.43.40:26656,c4fa997e8a69bec5787607e25bfa233f941c5b10@88.198.5.77:29656,14973f993d5418e93e735885abaca693e6c979da@37.27.109.215:26656,17a1fd70609562ecb7cd10599e0a7d566d8b8699@88.198.70.23:11656,20c6e72c7cd3b3b37f88d703217576b4f72936d4@185.185.51.34:26656,6bfb98f919b8e655cc99938a18140aa4cedf6518@88.218.224.72:26656,e1b058e5cfa2b836ddaa496b10911da62dcf182e@164.152.161.199:36656,1e712ae1de51b0173170117813d0cbb54ab1eb78@91.121.55.152:26656,b37bb130ceab25d91798d170c1c45644b17c742d@207.121.63.164:26656,fb5e0b9efacc11916c58bbcd3606cbaa7d43c99f@65.108.234.84:28656,5786e4780a8d12f89d6263bb31ac58cf4f8331a3@195.224.80.26:36656,30a8f6668043544ee2d9af9369f0f68ff8cf2c43@136.243.176.86:26656,aea85cf7e03258e9b02cdd8854f64857e9046d73@89.187.156.100:26698,e4ab3ce43a64f9ca81adec3bf864c6977fce2441@46.4.105.119:26630"
-
+SEEDS="30a8f6668043544ee2d9af9369f0f68ff8cf2c43@seed-celestia-testnet.validexis.com:26656"
+PEERS="9d357da286e8278c79ec6ebfc01d295a547ddd98@peer-celestia-testnet.validexis.com:26656,5d0bf034d6e6a8b5ee31a2f42f753f1107b3a00e@65.108.75.179:11656,89cca749b0eab33db47da6015bc5f3845c361964@167.172.30.82:26656,ef713a1700508c9c6a46cc2b61b41a6fa59ac53d@136.243.94.113:26656,227f9c3bf41779ab70187b781cf4de3f387870f0@51.89.21.142:26656,2e28ae4affb16877f4dba754fd4ba5509f669c5f@94.130.221.170:26656,0d25acebc3c65a6e90d0f9b448d4f2f47e5de55e@217.28.56.148:26656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.celestia-app/config/config.toml
 
