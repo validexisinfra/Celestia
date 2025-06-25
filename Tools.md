@@ -109,6 +109,10 @@ wget -O $HOME/.celestia-app/config/addrbook.json https://mainnets1.validexis.com
 wget -O $HOME/.celestia-app/config/genesis.json https://mainnets1.validexis.com/celestia/genesis.json
 ```
 
+#### 📥 State Syns
+[`https://services.validexis.com/mainnets/celestia/state-syns`](https://services.validexis.com/mainnets/celestia/state-syns)
+
+
 ### 🧪 Testnet
 
 #### 🌐 Endpoints
