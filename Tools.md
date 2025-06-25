@@ -113,6 +113,7 @@ wget -O $HOME/.celestia-app/config/genesis.json https://mainnets1.validexis.com/
 [`https://services.validexis.com/mainnets/celestia/state-syns`](https://services.validexis.com/mainnets/celestia/state-syns)
 
 
+
 ### 🧪 Testnet
 
 #### 🌐 Endpoints
