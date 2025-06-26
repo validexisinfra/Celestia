@@ -45,7 +45,6 @@ _(e.g., `validexis.json`)_
 ```
 
 > 📌 **Note:** Please use **direct URLs** to PNG or SVG logos.  
-> 🧾 **Keep the description under 300 characters.**
 
 ---
 
@@ -55,7 +54,7 @@ Run this command on your Celestia bridge node:
 
 ```bash
 celestia p2p info --node.store ~/.celestia-bridge-mocha-4/
-
+```
 Copy the **Peer ID** from the output and paste it into the `bridgeNodeID` field of your JSON file.
 
 ---
