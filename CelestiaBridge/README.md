@@ -42,6 +42,7 @@ _(e.g., `validexis.json`)_
   "github": "validexisinfra",
   "description": "Validator and infra provider for Celestia and other Cosmos-based networks"
 }
+---
 
 > 📌 **Note:** Please use **direct URLs** to PNG or SVG logos.  
 > 🧾 **Keep the description under 300 characters.**
