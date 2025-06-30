@@ -17,7 +17,7 @@ print "Updating system and installing dependencies..."
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
 
-print "Installing Go 1.23.6..."
+print "Installing Go 1.24.1..."
 sudo rm -rf /usr/local/go
 curl -Ls https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
 echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh
@@ -31,7 +31,7 @@ cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node
 cd celestia-node/
-git checkout tags/v0.23.1-mocha
+git checkout tags/v0.23.2-mocha
 make build 
 sudo make install 
 make cel-key
