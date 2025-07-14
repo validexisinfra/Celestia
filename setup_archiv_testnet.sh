@@ -112,7 +112,7 @@ WantedBy=multi-user.target
 EOF
 
 print "=== Downloading chain snapshot ==="
-curl -L https://snapshots1.validexis.com/celestia-testnet/snap_celestia-archive_7060225.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.celestia-app/
+curl -L https://snapshots1.validexis.com/celestia-testnet/snap_celestia-archive_7127059.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.celestia-app/
 
 print "=== Starting Celestia node ==="
 sudo systemctl daemon-reload
