@@ -26,12 +26,12 @@ echo "export PATH=\$PATH:/usr/local/go/bin:\$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
 
-print "Building Celestia Node (v0.25.3)..."
+print "Building Celestia Node (v0.26.2)..."
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node
 cd celestia-node/
-git checkout tags/v0.25.3-mocha
+git checkout tags/v0.26.2-mocha
 make build 
 sudo make install 
 make cel-key
