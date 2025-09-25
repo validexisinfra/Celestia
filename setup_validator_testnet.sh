@@ -62,26 +62,11 @@ PEERS="9d357da286e8278c79ec6ebfc01d295a547ddd98@peer-celestia-testnet.validexis.
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.celestia-app/config/config.toml
 
-print "=== Setting commit timeout, gas prices, and pruning ==="
-sed -i -e "s|^target_height_duration *=.*|timeout_commit = \"11s\"|" $HOME/.celestia-app/config/config.toml
+print "=== Setting gas prices, and pruning ==="
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.002utia\"|" $HOME/.celestia-app/config/app.toml
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.celestia-app/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.celestia-app/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.celestia-app/config/app.toml
-
-print "=== Configuring p2p rates ==="
-sed -i -e "s|^recv_rate *=.*|recv_rate = 10485760|" \
-       -e "s|^send_rate *=.*|send_rate = 10485760|" \
-       -e "s|^ttl-num-blocks *=.*|ttl-num-blocks = 12|" \
-       $HOME/.celestia-app/config/config.toml
-
-print "=== Set mempool to v1 ==="
-sed -i '
-/^\[mempool\]/,/^\[/ {
-    s/version = .*/version = "v1"/
-    s/max_txs_bytes = .*/max_txs_bytes = 39485440/
-    s/max_tx_bytes = .*/max_tx_bytes = 7897088/
-}' $HOME/.celestia-app/config/config.toml       
 
 print "=== Enabling BBR congestion control ==="
 sudo modprobe tcp_bbr
