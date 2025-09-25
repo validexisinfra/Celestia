@@ -73,20 +73,6 @@ sed -i \
   -e 's|^pruning *=.*|pruning = "nothing"|' \
   $HOME/.celestia-app/config/app.toml
 
-print "=== Configuring p2p rates ==="
-sed -i -e "s|^recv_rate *=.*|recv_rate = 10485760|" \
-       -e "s|^send_rate *=.*|send_rate = 10485760|" \
-       -e "s|^ttl-num-blocks *=.*|ttl-num-blocks = 12|" \
-       $HOME/.celestia-app/config/config.toml
-
-print "=== Set mempool to v1 ==="
-sed -i '
-/^\[mempool\]/,/^\[/ {
-    s/version = .*/version = "v1"/
-    s/max_txs_bytes = .*/max_txs_bytes = 39485440/
-    s/max_tx_bytes = .*/max_tx_bytes = 7897088/
-}' $HOME/.celestia-app/config/config.toml       
-
 print "=== Enabling BBR congestion control ==="
 sudo modprobe tcp_bbr
 echo "net.core.default_qdisc=fq" | sudo tee -a /etc/sysctl.conf
