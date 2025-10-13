@@ -30,8 +30,9 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ### 🛡️ Validator Security  
 - 🔒 [Enhancing SSH Security for a Validator](https://services.validexis.com/validator-security-our-approach-and-protection-measures/enhancing-ssh-security-for-a-validator) — Harden SSH access to reduce unauthorized login attempts.  
 - 🧑‍💻 [TMKMS for Remote Signing](https://services.validexis.com/validator-security-our-approach-and-protection-measures/tmkms-for-remote-signing) — Use Tendermint Key Management System for secure remote signing.  
-- 🔑 [Horcrux](https://services.validexis.com/validator-security-our-approach-and-protection-measures/horcrux) — Implement threshold signing by splitting validator keys.  
-- 🛡️ [Protecting Validator from DDoS Attacks](https://services.validexis.com/validator-security-our-approach-and-protection-measures/protecting-validator-from-ddos-attacks) — Set up defenses against network overloads and attacks.  
+- 🔑 [Horcrux](https://services.validexis.com/validator-security-our-approach-and-protection-measures/horcrux) — Implement threshold signing by splitting validator keys.
+- 💽 [Ledger for Validator Key Management](https://services.validexis.com/validator-security-our-approach-and-protection-measures/ledger-for-validator-key-management) — Set up defenses against network overloads and attacks.   
+- 🛡️ [Protecting Validator from DDoS Attacks](https://services.validexis.com/validator-security-our-approach-and-protection-measures/protecting-validator-from-ddos-attacks) — Secure validator key management using Ledger hardware wallets with offline signing and complete key isolation.  
 - 🧬 [Multi-Factor Authentication (MFA) for a Validator](https://services.validexis.com/validator-security-our-approach-and-protection-measures/multi-factor-authentication-mfa-for-a-validator) — Add an extra layer of identity verification.
 
 ### 🚨 Monitoring  
