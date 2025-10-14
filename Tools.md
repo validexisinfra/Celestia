@@ -269,3 +269,8 @@ Learn more and join the challenge here: [https://services.validexis.com/celestia
 
 -  [Effortless Reward Tracking with CelestiaUltraBot](https://x.com/validexis/status/1895033853309227323)  
   Easily monitor your balance and gain insights into your current and projected rewards.
+
+- [Introducing Celestia Bridge Explorer](https://x.com/validexis/status/1942872862819242181)  
+  Monitor **@celestia** bridge nodes in real time with detailed analytics and network insights.  
+  Features: geo analysis, uptime & performance metrics, network trends, and Telegram alerts via **@CelestiaUltraBot**.
+
