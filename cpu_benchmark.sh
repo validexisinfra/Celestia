@@ -13,12 +13,12 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 # --- DOWNLOAD BENCHMARK TOOL ONLY ---
+echo -e "\e[1;34m⬇️ Downloading Celestia CPU benchmark tool...\e[0m"
+sudo apt install -y subversion
 cd /tmp
-rm -rf celestia-benchmark
-git clone --filter=blob:none --sparse https://github.com/celestiaorg/celestia-app.git celestia-benchmark
-cd celestia-benchmark
-git sparse-checkout set tools/cpu_requirements
-cd tools/cpu_requirements
+rm -rf cpu_requirements
+svn export https://github.com/celestiaorg/celestia-app/trunk/tools/cpu_requirements cpu_requirements
+cd cpu_requirements
 
 echo -e "\e[1;34m📊 Running benchmark (this may take several minutes)...\e[0m"
 nice -n 19 go run main.go | tee $HOME/cpu_benchmark_result_$(date +%Y%m%d_%H%M).txt
