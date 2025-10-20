@@ -5,14 +5,11 @@ echo -e "\e[1;35m🔹 Starting Celestia CPU Benchmark...\e[0m"
 sleep 1
 
 # --- INSTALL GO ---
-echo -e "\e[1;34m📦 Installing Go (v1.24.6)...\e[0m"
-sudo apt update && sudo apt upgrade -y
-sudo apt install -y curl git build-essential
-sudo rm -rf /usr/local/go
+echo -e "\e[1;34m📦 Installing Go ...\e[0m"
 curl -Ls https://go.dev/dl/go1.24.6.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-
-# Add Go to PATH
-echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' | tee -a $HOME/.bash_profile $HOME/.profile >/dev/null
+eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
+eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 # Create a temporary directory for benchmark
