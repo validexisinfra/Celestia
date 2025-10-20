@@ -1,4 +1,25 @@
 # Celestia
+
+## 🧩 Benchmark Node Resources  
+**Before installation — check your hardware.**  
+Use this script to test your server’s performance and verify whether it meets Celestia validator hardware requirements.  
+The benchmark performs several CPU-intensive tasks and saves results to a local file.
+
+### ⚙️ Run Benchmark  
+~~~bash
+source <(curl -s https://raw.githubusercontent.com/validexisinfra/Celestia/main/cpu_benchmark.sh)
+~~~
+
+### 📄 View Results  
+~~~bash
+cat ~/cpu_benchmark_result_*.txt
+~~~
+
+> 💡 **Note:**  
+> This script runs entirely in a temporary directory (`/tmp`) and does **not affect your running node or blockchain data**.
+
+---
+
 # Celestia Setup & Upgrade Scripts
 A collection of automated scripts for setting up and upgrading Celestia nodes on both Testnet (Mocha-4) and Mainnet.
 
