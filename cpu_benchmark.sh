@@ -7,25 +7,23 @@ sleep 1
 # --- INSTALL GO ---
 echo -e "\e[1;34m📦 Installing Go ...\e[0m"
 curl -Ls https://go.dev/dl/go1.24.6.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+echo "export PATH=\$PATH:/usr/local/go/bin:\$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
-# Create a temporary directory for benchmark
+# --- CREATE TEMP DIR ---
 cd /tmp
 rm -rf celestia-benchmark
+echo -e "\e[1;34m📥 Cloning Celestia repo...\e[0m"
 git clone https://github.com/celestiaorg/celestia-app.git celestia-benchmark
 cd celestia-benchmark
-git pull origin main
 
-# Navigate to the benchmark tool directory
+# --- RUN BENCHMARK ---
 cd tools/cpu_requirements
-
 echo -e "\e[1;34m📊 Running benchmark (this may take several minutes)...\e[0m"
 nice -n 19 go run main.go | tee $HOME/cpu_benchmark_result_$(date +%Y%m%d_%H%M).txt
 
-# Clean up temporary files
+# --- CLEANUP ---
 cd /tmp && rm -rf celestia-benchmark
 
 echo -e "\n\e[1;32m✅ Benchmark completed!\e[0m"
