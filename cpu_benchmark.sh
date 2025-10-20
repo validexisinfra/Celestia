@@ -12,14 +12,12 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
-# Create a temporary directory for benchmark
+# --- DOWNLOAD BENCHMARK TOOL ONLY ---
 cd /tmp
 rm -rf celestia-benchmark
-git clone https://github.com/celestiaorg/celestia-app.git celestia-benchmark
+git clone --filter=blob:none --sparse https://github.com/celestiaorg/celestia-app.git celestia-benchmark
 cd celestia-benchmark
-git pull origin main
-
-# Navigate to the benchmark tool directory
+git sparse-checkout set tools/cpu_requirements
 cd tools/cpu_requirements
 
 echo -e "\e[1;34m📊 Running benchmark (this may take several minutes)...\e[0m"
