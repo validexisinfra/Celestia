@@ -47,9 +47,9 @@ git checkout v5.0.11
 make install
 
 print "=== Configuring node ==="
-celestia-appd config chain-id celestia
-celestia-appd config keyring-backend file
-celestia-appd config node tcp://localhost:26657
+celestia-appd config set client chain-id celestia
+celestia-appd config set client keyring-backend file
+celestia-appd config set client node tcp://localhost:26657
 celestia-appd init "$MONIKER" --chain-id celestia
 
 print "=== Downloading genesis and addrbook ==="
