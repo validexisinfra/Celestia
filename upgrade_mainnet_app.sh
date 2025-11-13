@@ -2,7 +2,7 @@
 rm -rf $HOME/celestia-app
 git clone https://github.com/celestiaorg/celestia-app/
 cd $HOME/celestia-app
-git checkout v6.2.4
+git checkout v6.2.5
 make install
-​celestia-appd update-config
+
 sudo systemctl restart celestia-appd && sudo journalctl -fu celestia-appd -o cat
