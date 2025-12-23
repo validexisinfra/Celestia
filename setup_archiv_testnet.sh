@@ -43,7 +43,7 @@ cd $HOME
 rm -rf celestia-app
 git clone https://github.com/celestiaorg/celestia-app.git
 cd celestia-app
-git checkout v6.3.0-mocha
+git checkout v6.4.4-mocha
 make install
 
 print "=== Configuring node ==="
