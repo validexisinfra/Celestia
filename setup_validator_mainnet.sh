@@ -43,7 +43,7 @@ cd $HOME
 rm -rf celestia-app
 git clone https://github.com/celestiaorg/celestia-app.git
 cd celestia-app
-git checkout v6.4.4
+git checkout v6.4.10
 make install
 
 print "=== Configuring node ==="
