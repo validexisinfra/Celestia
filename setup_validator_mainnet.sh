@@ -53,16 +53,14 @@ celestia-appd config set client node tcp://localhost:26657
 celestia-appd init "$MONIKER" --chain-id celestia
 
 print "=== Downloading genesis and addrbook ==="
-wget -O $HOME/.celestia-app/config/genesis.json https://mainnets1.validexis.com/celestia/genesis.json
-wget -O $HOME/.celestia-app/config/addrbook.json https://mainnets1.validexis.com/celestia/addrbook.json
+wget -O $HOME/.celestia-app/config/genesis.json https://server-1.itrocket.net/mainnet/celestia/genesis.json
+wget -O $HOME/.celestia-app/config/addrbook.json  https://server-1.itrocket.net/mainnet/celestia/addrbook.json
 
 print "=== Configuring peers and seeds ==="
-SEEDS="0074b06d366fe8e1d6a2a53b6752bd55e33267f6@seed-celestia-mainnet.validexis.com:37656"
-PEERS="a48c5bb03ff416f6cb0245e0aa42523cc6c9f430@peer-celestia-mainnet.validexis.com:26656,a8ddad6896dddccc42534f24afc6d14bbf278f33@65.109.18.169:11656,b5622df798ab39de650fa2e7c79190a0d3e814e0@137.184.44.109:26656,e263dbf2fbd4734a364dac1236bb8cbd83a0c012@157.90.33.62:28656,d0c4affc656bad26d7a46e4b946c0be71baa4a1f@46.4.51.104:11656,a5f01c0afea36df559b8d92e55626c0b5275dfd0@103.219.169.97:43656,74fc653041a6ca07e3432f6f12e8753e1e4dfe21@38.121.43.84:26656,6ee545c2992a8201ce2ed68d73776695627595db@168.119.37.164:12056,ce99d7da2530f75d05880d13d9eda384d5a1afe4@65.109.34.34:23356,2ae2d3d0b97c4fcd134decb202ac241cd2f44735@37.252.186.118:2000,e6d602f66559ee2a7280a46efbc5f87efe567bcb@139.84.143.106:10456,2fdf0e8288e18f39815a750857414325a07e5fca@218.153.200.72:11002,44336a5aaae84446a31bc6fe22246d8a11af3c90@65.109.19.111:40656,9d4afca92c2d6e681d3605ae25cb1817620a9604@35.195.100.59:26656,c33e89275c461a3871253025a1f5dcde9f8856a2@136.243.67.47:11656,a71a4c58dce5b2268e3c7f229608772327110ee5@65.109.54.91:11056,9cd7540cd22f9a9442af23b5d83c2a69ea4b24c2@62.210.122.96:26656"
-
+SEEDS="12ad7c73c7e1f2460941326937a039139aa78884@celestia-mainnet-seed.itrocket.net:40656"
+PEERS="d535cbf8d0efd9100649aa3f53cb5cbab33ef2d6@celestia-mainnet-peer.itrocket.net:26656,79a1a8857a5342212655432a04777845cc912e28@161.118.209.33:26656,6d661e1af1f53e7cd34664313df055dc40399795@197.85.190.15:26656,5deeddca390a7dd3b54b46e02794ae74b03cd0bd@207.229.99.33:40656,e4a9e9c06cd539a86e7ae172b6c1f6888dd86cb3@23.227.223.129:26656,c150d7d10e74b1be92acdc24bfd7c567a80188d2@64.130.47.114:26656,65a6d964e0598e282b5b413a4884adda22a4f54a@5.199.140.75:2120,c04516cd6cb0e8980dd95a8ea4d6d4aabfd4d984@65.109.19.189:11656,12ad7c73c7e1f2460941326937a039139aa78884@65.109.36.88:40656,4928c12dc8ba4c97bf529296c9321341c6dbcfb1@[2001:bc8:1203:1b2::8]:26656,f7e16376cf0ff73010ddc7299de562d86977c2cc@104.250.153.230:26656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
-       -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" \
-       $HOME/.celestia-app/config/config.toml
+       -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.celestia-app/config/config.toml
 
 print "=== Setting commit timeout, gas prices, and pruning ==="
 sed -i -e "s|^target_height_duration *=.*|timeout_commit = \"11s\"|" $HOME/.celestia-app/config/config.toml
@@ -96,7 +94,7 @@ WantedBy=multi-user.target
 EOF
 
 print "=== Downloading chain snapshot ==="
-curl -L https://snapshots1.validexis.com/celestia-mainnet/snap_celestia-prun.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.celestia-app/
+curl -L https://snapshots.kjnodes.com/celestia/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.celestia-app
 
 print "=== Starting Celestia node ==="
 sudo systemctl daemon-reload
