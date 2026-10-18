@@ -1,0 +1,16 @@
+# /etc/systemd/system/tmkms.service — VALIDEXIS template
+[Unit]
+Description=TMKMS for Celestia
+After=network-online.target srv-tmkms.mount
+# Do not start before the encrypted key volume is unlocked and mounted
+Requires=srv-tmkms.mount
+
+[Service]
+User=tmkms
+ExecStart=/usr/local/bin/tmkms start -c /srv/tmkms/celestia/tmkms.toml
+Restart=always
+RestartSec=10
+LimitNOFILE=1024
+
+[Install]
+WantedBy=multi-user.target
