@@ -1,0 +1,18 @@
+# Validator-side settings for a Fibre server on a separate host — VALIDEXIS
+# Edit existing keys; do not append duplicate sections. Back up config/ first.
+
+# ---- config/app.toml ----
+[grpc]
+enable = true
+address = "<validator_private_ip>:9090"
+
+# ---- config/config.toml (top level, before the first section) ----
+priv_validator_grpc_laddr = "<validator_private_ip>:26669"
+priv_validator_grpc_cert_file = "privval-tls/server.crt"
+priv_validator_grpc_key_file = "privval-tls/server.key"
+priv_validator_grpc_client_ca_file = "privval-tls/ca.crt"
+# All three TLS files are required for a non-loopback address.
+# Never enable priv_validator_grpc_allow_insecure in production.
+
+# Remote signer (TMKMS dials this address)
+priv_validator_laddr = "tcp://<validator_private_ip>:26658"
