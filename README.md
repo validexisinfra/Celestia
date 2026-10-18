@@ -11,7 +11,7 @@ Scripts, templates and guides from VALIDEXIS — Celestia Mainnet Beta and Mocha
 | [`tmkms/`](tmkms) | TMKMS v0.15.0 with SignRawBytes, softsign + LUKS, signer change checklist | [TMKMS for Celestia v10 and Fibre](https://services.validexis.com/validator-security-our-approach-and-protection-measures/tmkms-for-remote-signing/tmkms-for-celestia-v10-and-fibre) |
 | [`monitoring/`](monitoring) | Prometheus alert rules, OpenTelemetry Collector for Fibre | [Monitoring Celestia Validators and Fibre](https://services.validexis.com/monitoring/monitoring-celestia-validators-and-fibre) |
 
-All ecosystem tools, guides and endpoints: **[Tools.md](Tools.md)** · Platform: **[VALIDEXIS Celestia](https://celestia.validexis.com/new2/)**
+All ecosystem tools, guides and endpoints: **[Tools.md](Tools.md)** · Platform: **[VALIDEXIS Celestia](https://celestia.validexis.com/)**
 
 > Templates contain placeholders only. No addresses, keys or certificates are stored in this repository.
 

@@ -32,21 +32,21 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ## 🧭 VALIDEXIS Celestia Platform
 > _One public platform for Celestia infrastructure evidence and operator resources._
 
-- 🌐 [**VALIDEXIS Celestia**](https://celestia.validexis.com/new2/) — consensus ledger, validator directory, operator evidence reviews, Fibre network pulse, DA bridges, applications, endpoints.
+- 🌐 [**VALIDEXIS Celestia**](https://celestia.validexis.com/) — consensus ledger, validator directory, operator evidence reviews, Fibre network pulse, DA bridges, applications, endpoints.
 - 🎞️ [**VALIDEXIS for Celestia — team, infrastructure and contributions**](https://validexis.com/celestia-foundation/)
-- 🪪 [**VALIDEXIS validator identity and history**](https://celestia.validexis.com/new2/#/validexis)
+- 🪪 [**VALIDEXIS validator identity and history**](https://celestia.validexis.com/validexis)
 - 📐 [**Platform guide and methodology**](https://services.validexis.com/celestia-infrastructure/validexis-celestia-platform-and-methodology) — what each view answers and how its numbers are produced.
 
 | View | Question it answers |
 |---|---|
-| [Proposal slot ledger](https://celestia.validexis.com/new2/#/proposals?net=mainnet) | Did each scheduled proposer produce its block? Replayed from public archive RPC; unverified heights stay unattributed. |
-| [Validator directory](https://celestia.validexis.com/new2/#/operators?net=mainnet) | Who is bonded, who signalled v10, who registered a Fibre host? |
-| [Operator evidence review](https://celestia.validexis.com/new2/#/selector) | How does an operator look against the Foundation's published criteria? Unknown is never fail. |
-| [Fibre network pulse](https://celestia.validexis.com/new2/#/fibre) | Is Fibre active, who registered, how reachable are hosts? |
-| [Fibre inside / outside](https://celestia.validexis.com/new2/#/validator?net=mainnet&id=celestiavaloper1w9es9kv6ccd44yp3nj7e40p8nyul0dltf9yna4&tab=infra) | Our Fibre server's own telemetry next to named external probes. |
-| [DA bridges](https://celestia.validexis.com/new2/#/bridges?net=mainnet) | Observed bridge peers and how current they are. |
-| [Applications](https://celestia.validexis.com/new2/#/application?id=eden) | Source-reported DA footprint of rollups and apps. |
-| [Endpoints](https://celestia.validexis.com/new2/#/endpoints?net=mainnet) | Which public endpoints answer, and how fast. |
+| [Proposal slot ledger](https://celestia.validexis.com/proposals?net=mainnet) | Did each scheduled proposer produce its block? Replayed from public archive RPC; unverified heights stay unattributed. |
+| [Validator directory](https://celestia.validexis.com/operators?net=mainnet) | Who is bonded, who signalled v10, who registered a Fibre host? |
+| [Operator evidence review](https://celestia.validexis.com/selector) | How does an operator look against the Foundation's published criteria? Unknown is never fail. |
+| [Fibre network pulse](https://celestia.validexis.com/fibre) | Is Fibre active, who registered, how reachable are hosts? |
+| [Fibre inside / outside](https://celestia.validexis.com/validator?net=mainnet&id=celestiavaloper1w9es9kv6ccd44yp3nj7e40p8nyul0dltf9yna4&tab=infra) | Our Fibre server's own telemetry next to named external probes. |
+| [DA bridges](https://celestia.validexis.com/bridges?net=mainnet) | Observed bridge peers and how current they are. |
+| [Applications](https://celestia.validexis.com/application?id=eden) | Source-reported DA footprint of rollups and apps. |
+| [Endpoints](https://celestia.validexis.com/endpoints?net=mainnet) | Which public endpoints answer, and how fast. |
 
 ---
 
@@ -76,7 +76,7 @@ Fibre ──application gRPC, private VLAN──► Validator
 
 - 📖 [**Fibre Server: Setup and Operations**](https://services.validexis.com/celestia-infrastructure/fibre-server-setup-and-operations) — dedicated Fibre host, mutual TLS to the validator, capacity planning, registration, troubleshooting.
 - ⚙️ [**Fibre templates**](https://github.com/validexisinfra/Celestia/tree/main/fibre) — `server_config.toml`, validator settings, systemd unit, mTLS certificate script.
-- 📊 Our Fibre telemetry and external checks → [platform](https://celestia.validexis.com/new2/#/validator?net=mainnet&id=celestiavaloper1w9es9kv6ccd44yp3nj7e40p8nyul0dltf9yna4&tab=infra) · [open data](https://celestia.validexis.com/new/api/fibre-telemetry)
+- 📊 Our Fibre telemetry and external checks → [platform](https://celestia.validexis.com/validator?net=mainnet&id=celestiavaloper1w9es9kv6ccd44yp3nj7e40p8nyul0dltf9yna4&tab=infra) · [open data](https://celestia.validexis.com/new/api/fibre-telemetry)
 
 ---
 
@@ -305,7 +305,7 @@ Learn more and join the challenge here: [https://services.validexis.com/celestia
 ---
 
 ## 🖥️ Celestia Bridge Explorer (2025)  
-> _Visualize and monitor the performance of Celestia bridge nodes. Built in 2025; its monitoring and registry work continues in the [bridge views](https://celestia.validexis.com/new2/#/bridges?net=mainnet) of the VALIDEXIS Celestia platform._
+> _Visualize and monitor the performance of Celestia bridge nodes. Built in 2025; its monitoring and registry work continues in the [bridge views](https://celestia.validexis.com/bridges?net=mainnet) of the VALIDEXIS Celestia platform._
 
 ### 🌐 Dashboard  
 - 🖥️ [Celestia Bridge Explorer](https://celestiabridge.com/) · [documentation](https://services.validexis.com/celestiabridge) · [source code](https://github.com/validexisinfra/celestiabridgeexplorer) · [bridge registry](https://github.com/validexisinfra/CelestiaBridge)  
