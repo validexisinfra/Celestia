@@ -7,19 +7,104 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 
 <div style="overflow-x: auto;">
 <p align="center" style="white-space: nowrap;">
+🧭 <a href="#-validexis-celestia-platform"><b>Platform</b></a>・
+🏗️ <a href="#%EF%B8%8F-celestia-infrastructure"><b>Infrastructure</b></a>・
+🧵 <a href="#-fibre"><b>Fibre</b></a>・
+📡 <a href="#-remote-signing-tmkms-for-celestia-v10"><b>TMKMS v10</b></a>・
+🚨 <a href="#-monitoring-validators-fibre-and-signers"><b>Alerting</b></a>・
+📐 <a href="#-methodology-and-open-data"><b>Methodology</b></a>・
 🔐 <a href="#-security--monitoring"><b>Security</b></a>・ 
 📖 <a href="#-guides--tutorials"><b>Guides</b></a>・ 
 ⚙️ <a href="#%EF%B8%8F-automation--scripts"><b>Scripts</b></a>・
 🌐 <a href="#-networks--endpoints"><b>Endpoints</b></a>・  
 🗂️ <a href="#%EF%B8%8F-snapshots"><b>Snapshots</b></a>・ 
 📡 <a href="#-ibc-relayer"><b>IBC Relayer</b></a>・   
-🤖 <a href="#-bots--notifications"><b>Bots</b></a>・ 
-🖥️ <a href="#%EF%B8%8F-celestia-bridge-explorer"><b>Bridge Explorer</b></a>・ 
+🤖 <a href="#-bots--notifications-2025"><b>Bots</b></a>・ 
+🖥️ <a href="#%EF%B8%8F-celestia-bridge-explorer-2025"><b>Bridge Explorer</b></a>・ 
 🛰️ <a href="#%EF%B8%8F-x-activities"><b>X Activities</b></a>  
 </p>
 </div>
 
 
+
+---
+
+## 🧭 VALIDEXIS Celestia Platform
+> _One public platform for Celestia infrastructure evidence and operator resources._
+
+- 🌐 [**VALIDEXIS Celestia**](https://celestia.validexis.com/new2/) — consensus ledger, validator directory, operator evidence reviews, Fibre network pulse, DA bridges, applications, endpoints.
+- 🎞️ [**VALIDEXIS for Celestia — team, infrastructure and contributions**](https://validexis.com/celestia-foundation/)
+- 🪪 [**VALIDEXIS validator identity and history**](https://celestia.validexis.com/new2/#/validexis)
+- 📐 [**Platform guide and methodology**](https://services.validexis.com/celestia-infrastructure/validexis-celestia-platform-and-methodology) — what each view answers and how its numbers are produced.
+
+| View | Question it answers |
+|---|---|
+| [Proposal slot ledger](https://celestia.validexis.com/new2/#/proposals?net=mainnet) | Did each scheduled proposer produce its block? Replayed from public archive RPC; unverified heights stay unattributed. |
+| [Validator directory](https://celestia.validexis.com/new2/#/operators?net=mainnet) | Who is bonded, who signalled v10, who registered a Fibre host? |
+| [Operator evidence review](https://celestia.validexis.com/new2/#/selector) | How does an operator look against the Foundation's published criteria? Unknown is never fail. |
+| [Fibre network pulse](https://celestia.validexis.com/new2/#/fibre) | Is Fibre active, who registered, how reachable are hosts? |
+| [Fibre inside / outside](https://celestia.validexis.com/new2/#/validator?net=mainnet&id=celestiavaloper1w9es9kv6ccd44yp3nj7e40p8nyul0dltf9yna4&tab=infra) | Our Fibre server's own telemetry next to named external probes. |
+| [DA bridges](https://celestia.validexis.com/new2/#/bridges?net=mainnet) | Observed bridge peers and how current they are. |
+| [Applications](https://celestia.validexis.com/new2/#/application?id=eden) | Source-reported DA footprint of rollups and apps. |
+| [Endpoints](https://celestia.validexis.com/new2/#/endpoints?net=mainnet) | Which public endpoints answer, and how fast. |
+
+---
+
+## 🏗️ Celestia Infrastructure
+> _How we run Celestia Mainnet Beta and Mocha: 6 dedicated servers in Cape Town, one role per server._
+
+- 📖 [**Celestia Infrastructure by VALIDEXIS**](https://services.validexis.com/celestia-infrastructure) — roles, connections, design decisions.
+- 🗂️ [**Infrastructure overview on GitHub**](https://github.com/validexisinfra/Celestia/tree/main/infrastructure)
+
+| Role | Mainnet | Mocha | Public exposure |
+|---|---|---|---|
+| Validator (`celestia-appd`) | ✓ | ✓ | P2P |
+| Fibre server | ✓ | ✓ | client port `7980` |
+| TMKMS signer (softsign, LUKS) | ✓ | ✓ | none |
+
+```
+Fibre ──privval gRPC, mTLS──► Validator ◄──secret connection── TMKMS
+Fibre ──application gRPC, private VLAN──► Validator
+```
+
+📍 Rackzar Cape Town DC1, South Africa · private VLAN between all servers · TMKMS dials the validator · Fibre never talks to the signer.
+
+---
+
+## 🧵 Fibre
+> _Validator-operated data availability from app version 10._
+
+- 📖 [**Fibre Server: Setup and Operations**](https://services.validexis.com/celestia-infrastructure/fibre-server-setup-and-operations) — dedicated Fibre host, mutual TLS to the validator, capacity planning, registration, troubleshooting.
+- ⚙️ [**Fibre templates**](https://github.com/validexisinfra/Celestia/tree/main/fibre) — `server_config.toml`, validator settings, systemd unit, mTLS certificate script.
+- 📊 Our Fibre telemetry and external checks → [platform](https://celestia.validexis.com/new2/#/validator?net=mainnet&id=celestiavaloper1w9es9kv6ccd44yp3nj7e40p8nyul0dltf9yna4&tab=infra) · [open data](https://celestia.validexis.com/new/api/fibre-telemetry)
+
+---
+
+## 📡 Remote Signing: TMKMS for Celestia v10
+> _TMKMS v0.15.0 signs raw bytes (`SignRawBytes`) for Fibre payment promises and TLS identity._
+
+- 📖 [**TMKMS for Celestia v10 and Fibre**](https://services.validexis.com/validator-security-our-approach-and-protection-measures/tmkms-for-remote-signing/tmkms-for-celestia-v10-and-fibre) — softsign, key on a LUKS volume, signing path, latency check.
+- 🔑 [**Key Custody and Signer Change**](https://services.validexis.com/celestia-infrastructure/key-custody-and-signer-change) — one online key, offline encrypted backup, fence → carry state → review → resume.
+- ⚙️ [**TMKMS templates**](https://github.com/validexisinfra/Celestia/tree/main/tmkms) — `tmkms.toml`, systemd unit, signer change checklist.
+
+---
+
+## 🚨 Monitoring: Validators, Fibre and Signers
+> _Prometheus, Grafana, OpenTelemetry, an off-site watcher and on-call escalation._
+
+- 📖 [**Monitoring Celestia Validators and Fibre**](https://services.validexis.com/monitoring/monitoring-celestia-validators-and-fibre)
+- 🔔 [**Prometheus alert rules**](https://github.com/validexisinfra/Celestia/blob/main/monitoring/alerts/celestia-validator-fibre.rules.yml) — signing latency > 5 ms (requirement 10 ms), signing failures, > 20 missed blocks/h, no block for 60 s, Fibre errors, disk/port > 70%, SSD wear > 80%.
+- 📡 [**OpenTelemetry Collector for Fibre**](https://github.com/validexisinfra/Celestia/blob/main/monitoring/otel/otel-collector.yaml.example)
+
+---
+
+## 📐 Methodology and Open Data
+> _How our public numbers are produced, so anyone can check them._
+
+- 🧮 [**Proposal slot ledger**](https://services.validexis.com/celestia-infrastructure/validexis-celestia-platform-and-methodology#method-1-proposal-slot-ledger) — proposer replay with CometBFT weighted round-robin, checked against headers and commits.
+- 🪪 [**Operator evidence profiles**](https://services.validexis.com/celestia-infrastructure/validexis-celestia-platform-and-methodology#method-2-operator-evidence-profiles) — computed vs source-linked vs insufficient data.
+- 🔭 [**Fibre inside / outside**](https://services.validexis.com/celestia-infrastructure/validexis-celestia-platform-and-methodology#method-3-fibre-inside-and-outside) — native telemetry next to named external probes.
+- 📦 [**Open data: Fibre telemetry**](https://celestia.validexis.com/new/api/fibre-telemetry)
 
 ---
 
@@ -30,6 +115,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 ### 🛡️ Validator Security  
 - 🔒 [Enhancing SSH Security for a Validator](https://services.validexis.com/validator-security-our-approach-and-protection-measures/enhancing-ssh-security-for-a-validator) — Harden SSH access to reduce unauthorized login attempts.  
 - 🧑‍💻 [TMKMS for Remote Signing](https://services.validexis.com/validator-security-our-approach-and-protection-measures/tmkms-for-remote-signing) — Use Tendermint Key Management System for secure remote signing.  
+  - 🆕 [TMKMS for Celestia v10 and Fibre (SignRawBytes)](https://services.validexis.com/validator-security-our-approach-and-protection-measures/tmkms-for-remote-signing/tmkms-for-celestia-v10-and-fibre) — TMKMS v0.15.0 with softsign and LUKS, signing path for Fibre.  
 - 🔑 [Horcrux](https://services.validexis.com/validator-security-our-approach-and-protection-measures/horcrux) — Implement threshold signing by splitting validator keys.
 - 💽 [Ledger for Validator Key Management](https://services.validexis.com/validator-security-our-approach-and-protection-measures/ledger-for-validator-key-management) — Set up defenses against network overloads and attacks.   
 - 🛡️ [Protecting Validator from DDoS Attacks](https://services.validexis.com/validator-security-our-approach-and-protection-measures/protecting-validator-from-ddos-attacks) — Secure validator key management using Ledger hardware wallets with offline signing and complete key isolation.  
@@ -37,7 +123,8 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 
 ### 🚨 Monitoring  
 - 📊 [Node-exporter + Prometheus + Grafana](https://services.validexis.com/monitoring/node-exporter-+-prometheus-+-grafana) — Collect and visualize metrics with Prometheus & Grafana stack.  
-- 🧭 [TenderDuty for Node Monitoring](https://services.validexis.com/monitoring/tenderduty-for-node-monitoring) — Receive alerts when your validator misses blocks or goes offline.
+- 🧭 [TenderDuty for Node Monitoring](https://services.validexis.com/monitoring/tenderduty-for-node-monitoring) — Receive alerts when your validator misses blocks or goes offline.  
+- 🆕 [Monitoring Celestia Validators and Fibre](https://services.validexis.com/monitoring/monitoring-celestia-validators-and-fibre) — Fibre OpenTelemetry, remote-signing latency, alert rules and escalation.
 
 ---
 
@@ -51,7 +138,7 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 
 ### 🧱 Consensus Full Node Guides  
 - 🔧 Install → [Testnet](https://services.validexis.com/testnets/celestia/full-node-installation) | [Mainnet](https://services.validexis.com/mainnets/celestia/full-node-installation)  
-- 🔄 Upgrade → [Testnet](https://services.validexis.com/testnets/celestia/full-node/upgrade) | [Mainnet](https://services.validexis.com/mainnets/celestia/full-node-installation/upgrade)  
+- 🔄 Upgrade → [Testnet](https://services.validexis.com/testnets/celestia/full-node-installation/upgrade) | [Mainnet](https://services.validexis.com/mainnets/celestia/full-node-installation/upgrade)  
 - 📄 Useful Commands → [Testnet](https://services.validexis.com/testnets/celestia/full-node-installation/useful-commands) | [Mainnet](https://services.validexis.com/mainnets/celestia/full-node-installation/useful-commands)
 
 ### 🌉 Bridge Node Guides  
@@ -70,13 +157,13 @@ A collection of essential tools, scripts, guides, and security solutions for Cel
 > _"Save time with powerful scripts for automation."_ 
 
 ### 🛠 Celestia Setup Scripts  
-⚙️ **Validator Node Setup** → [Testnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-validator-node-setup-1) | [Mainnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-validator-node-setup-1)   
+⚙️ **Validator Node Setup** → [Testnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-validator-node-setup) | [Mainnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-validator-node-setup-1)   
 ⚙️ **Consensus Full Node Setup** → [Testnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-consensus-full-node-setup) | [Mainnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-consensus-full-node-setup-1)  
-⚙️ **Bridge Node Setup** → [Testnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-consensus-full-node-setup-1) | [Mainnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-bridge-node-setup-1)  
+⚙️ **Bridge Node Setup** → [Testnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-bridge-node-setup) | [Mainnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#%EF%B8%8F-bridge-node-setup-1)  
 
 ### 🔄 Celestia Upgrade Scripts  
 🔄 **Upgrade Celestia App** → [Testnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#-upgrade-testnet-app) | [Mainnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#-upgrade-mainnet-app)  
-🔄 **Upgrade Node** → [Testnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#-upgrade-mainnet-app) | [Mainnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#-upgrade-mainnet-bridge)  
+🔄 **Upgrade Node** → [Testnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#-upgrade-testnet-bridge) | [Mainnet](https://github.com/validexisinfra/Celestia?tab=readme-ov-file#-upgrade-mainnet-bridge)  
 
 ---
 
@@ -143,7 +230,7 @@ wget -O $HOME/.celestia-app/config/genesis.json https://testnets.validexis.com/c
 ```
 
 #### 📥 State Syns
-[`https://services.validexis.com/testnets/celestia/state-syns`](https://services.validexis.com/mainnets/celestia/state-syns)
+[`https://services.validexis.com/testnets/celestia/state-syns`](https://services.validexis.com/testnets/celestia/state-syns)
 
 ---
 
@@ -184,10 +271,10 @@ wget -O $HOME/.celestia-app/config/genesis.json https://testnets.validexis.com/c
 
 ---
 
-## 🤖 Bots & Notifications  
+## 🤖 Bots & Notifications (2025)  
 > _"Stay informed with smart bots & alerts."_
 
-We present to you [**Celestia UltraBot**](https://validexis.com/celestiaultrabot) - a versatile tool for participants in the Celestia ecosystem. The bot provides real-time information on staking, validator monitoring, and AI-powered solutions.  
+We present to you [**Celestia UltraBot**](https://services.validexis.com/celestiaultrabot) - a versatile tool for participants in the Celestia ecosystem. The bot provides real-time information on staking, validator monitoring, and AI-powered solutions.  
 
 With Celestia UltraBot, you can:  
 
@@ -217,11 +304,11 @@ Learn more and join the challenge here: [https://services.validexis.com/celestia
 
 ---
 
-## 🖥️ Celestia Bridge Explorer  
-> _Visualize and monitor the performance of Celestia bridge nodes._
+## 🖥️ Celestia Bridge Explorer (2025)  
+> _Visualize and monitor the performance of Celestia bridge nodes. Built in 2025; its monitoring and registry work continues in the [bridge views](https://celestia.validexis.com/new2/#/bridges?net=mainnet) of the VALIDEXIS Celestia platform._
 
 ### 🌐 Dashboard  
-- 🖥️ [Celestia Bridge Explorer](https://celestiabridge.com/)  
+- 🖥️ [Celestia Bridge Explorer](https://celestiabridge.com/) · [documentation](https://services.validexis.com/celestiabridge) · [source code](https://github.com/validexisinfra/celestiabridgeexplorer) · [bridge registry](https://github.com/validexisinfra/CelestiaBridge)  
   **Celestia Bridge Explorer** is a web-based dashboard that visualizes the performance, uptime, sync status, geographic distribution, and upgrade adoption of Celestia bridge nodes using open OTEL metrics.  
   Built for both the community and the Celestia core team, it enables real-time monitoring of bridge reliability, upgrade responsiveness, and overall network health in a single, accessible interface.
 
