@@ -1,0 +1,26 @@
+# Fibre server configuration template — VALIDEXIS
+# File: <fibre_home>/config/server_config.toml
+# Fibre runs on a dedicated server; the validator is reached over the private VLAN.
+# Replace <placeholders>. Never commit real IPs, keys or certificates.
+# Reference: https://docs.celestia.org/operate/consensus-validators/fibre/
+
+# Application gRPC of the validator (app.toml [grpc] address). Not encrypted:
+# keep it on the private VLAN and allow only the Fibre server in the firewall.
+app_grpc_address = "<validator_private_ip>:9090"
+
+# Privval gRPC of the validator (config.toml priv_validator_grpc_laddr).
+# Remote connection => mutual TLS is mandatory.
+signer_grpc_address = "<validator_private_ip>:26669"
+signer_grpc_ca_file = "/etc/fibre/tls/ca.crt"
+signer_grpc_cert_file = "/etc/fibre/tls/client.crt"
+signer_grpc_key_file = "/etc/fibre/tls/client.key"
+
+# Public client port. Register <public_host>:7980 with `tx valaddr set-host`.
+server_listen_address = "0.0.0.0:7980"
+
+# Connection limits. Worst-case receive buffers:
+#   max_connections x max_concurrent_streams x 132 MiB  (defaults: ~27 GiB)
+# Raise max_connections above 16 to keep slots free for downloads,
+# and recompute the memory budget first.
+max_connections = 16
+max_concurrent_streams = 13

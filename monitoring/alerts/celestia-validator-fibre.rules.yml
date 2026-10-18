@@ -1,0 +1,89 @@
+# Prometheus alert rules for Celestia validators, Fibre and TMKMS — VALIDEXIS
+# Thresholds match our published operating policy:
+#   https://services.validexis.com/monitoring/monitoring-celestia-validators-and-fibre
+# Assumed labels: network="mainnet"|"mocha", role="validator"|"fibre"|"signer".
+# Fibre metrics arrive over OTLP; check the exact converted names in your backend
+# (dots become underscores, unit suffixes such as _seconds may be added).
+
+groups:
+  - name: celestia-signing
+    rules:
+      - alert: RemoteSigningLatencyHigh
+        # Celestia requirement: median <= 10 ms. We alert at 5 ms.
+        expr: cometbft_privval_signing_latency_median_seconds > 0.005
+        for: 5m
+        labels: {severity: critical}
+        annotations:
+          summary: "{{ $labels.network }}: median node->KMS signing latency {{ $value | humanizeDuration }}"
+          description: "Above our 5 ms alert threshold (requirement 10 ms). Check signer load and VLAN latency."
+
+      - alert: RemoteSigningFailures
+        expr: increase(cometbft_privval_signing_failures_total[5m]) > 0
+        labels: {severity: critical}
+        annotations:
+          summary: "{{ $labels.network }}: remote signing failures ({{ $labels.reason }})"
+
+  - name: celestia-consensus
+    rules:
+      - alert: ValidatorMissedBlocks
+        # More than 20 missed blocks in one hour
+        expr: increase(cometbft_consensus_validator_missed_blocks[1h]) > 20
+        labels: {severity: critical}
+        annotations:
+          summary: "{{ $labels.network }}: {{ $value }} missed blocks in the last hour"
+
+      - alert: ChainStalled
+        # No new block for 60 seconds
+        expr: delta(cometbft_consensus_height{role="validator"}[60s]) == 0
+        labels: {severity: critical}
+        annotations:
+          summary: "{{ $labels.network }}: no new block for 60 s on {{ $labels.instance }}"
+
+  - name: celestia-fibre
+    rules:
+      - alert: FibreUploadErrors
+        expr: |
+          sum by (network) (rate(fibre_server_upload_shard_duration_seconds_count{success="false"}[10m]))
+            / clamp_min(sum by (network) (rate(fibre_server_upload_shard_duration_seconds_count[10m])), 1e-9) > 0.05
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $labels.network }}: Fibre upload error rate above 5%"
+
+      - alert: FibreSignErrors
+        # Payment-promise endorsement through validator -> TMKMS (SignRawBytes)
+        expr: increase(fibre_server_sign_duration_seconds_count{success="false"}[10m]) > 0
+        labels: {severity: critical}
+        annotations:
+          summary: "{{ $labels.network }}: Fibre payment-promise signing failures"
+
+      - alert: FibreTelemetryMissing
+        expr: absent_over_time(fibre_server_upload_shard_in_flight[15m])
+        labels: {severity: warning}
+        annotations:
+          summary: "Fibre OTLP telemetry missing for 15 minutes"
+
+  - name: hosts
+    rules:
+      - alert: DiskUsageHigh
+        expr: |
+          (1 - node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{fstype!~"tmpfs|overlay"}) > 0.70
+        for: 15m
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $labels.instance }} {{ $labels.mountpoint }} above 70%"
+
+      - alert: PublicPortUtilisationHigh
+        # 1 Gbps public port; adjust after a port upgrade
+        expr: rate(node_network_transmit_bytes_total{device=~"<public_iface>"}[5m]) * 8 > 0.70 * 1e9
+        for: 30m
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $labels.instance }} public port above 70% for 30 minutes"
+
+      - alert: SSDWearHigh
+        # smartctl_exporter; NVMe "percentage used"
+        expr: smartctl_device_percentage_used > 80
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $labels.instance }} {{ $labels.device }} SSD wear {{ $value }}%"

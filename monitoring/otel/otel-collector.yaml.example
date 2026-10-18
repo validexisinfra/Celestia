@@ -1,0 +1,39 @@
+# Minimal OpenTelemetry Collector for Fibre telemetry — VALIDEXIS template
+# Fibre: fibre start --otel-endpoint http://<this_collector>:4318
+# Upstream reference config:
+#   https://github.com/celestiaorg/celestia-app/blob/v10.4.0-mocha/observability/docker/otel-collector/config.yml
+
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: 0.0.0.0:4318   # reachable from Fibre servers on the private VLAN only
+
+processors:
+  batch: {}
+  resource:
+    attributes:
+      - key: network
+        value: mainnet           # "mocha" on the Mocha collector pipeline
+        action: upsert
+
+exporters:
+  prometheus:
+    endpoint: 0.0.0.0:8889       # scraped by Prometheus
+    resource_to_telemetry_conversion:
+      enabled: true
+  otlp/traces:
+    endpoint: <tempo_host>:4317
+    tls:
+      insecure: true             # private network only
+
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      processors: [resource, batch]
+      exporters: [prometheus]
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/traces]

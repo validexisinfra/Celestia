@@ -1,0 +1,23 @@
+# TMKMS v0.15.0 configuration template for Celestia — VALIDEXIS
+# v0.15.0 adds SignRawBytes, required by Fibre (payment promises, TLS identity).
+# Key and state live on a LUKS-encrypted volume mounted at /srv/tmkms.
+# Mocha: replace "celestia" with "mocha-5" and point to the Mocha validator.
+
+[[chain]]
+id = "celestia"
+key_format = { type = "bech32", account_key_prefix = "celestiapub", consensus_key_prefix = "celestiavalconspub" }
+# Double-sign protection. Never delete or reset; it moves with the key.
+state_file = "/srv/tmkms/celestia/state/celestia-consensus.json"
+
+[[providers.softsign]]
+chain_ids = ["celestia"]
+key_type = "consensus"
+path = "/srv/tmkms/celestia/secrets/celestia-consensus.key"
+
+[[validator]]
+chain_id = "celestia"
+# TMKMS dials the validator; pinning the node ID verifies its identity.
+addr = "tcp://<validator_node_id>@<validator_private_ip>:26658"
+secret_key = "/srv/tmkms/celestia/secrets/kms-identity.key"
+protocol_version = "v0.38"
+reconnect = true

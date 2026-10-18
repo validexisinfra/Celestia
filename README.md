@@ -1,5 +1,22 @@
 # Celestia
 
+Scripts, templates and guides from VALIDEXIS — Celestia Mainnet Beta and Mocha validator and Fibre operator.
+
+## 🏗️ Production setup — validators, Fibre and TMKMS
+
+| Folder | What is inside | Guide |
+|---|---|---|
+| [`infrastructure/`](infrastructure) | 6 servers in Cape Town, roles and connections | [Celestia Infrastructure](https://services.validexis.com/celestia-infrastructure) |
+| [`fibre/`](fibre) | Fibre `server_config.toml`, validator settings, systemd, mTLS certificates | [Fibre Server: Setup and Operations](https://services.validexis.com/celestia-infrastructure/fibre-server-setup-and-operations) |
+| [`tmkms/`](tmkms) | TMKMS v0.15.0 with SignRawBytes, softsign + LUKS, signer change checklist | [TMKMS for Celestia v10 and Fibre](https://services.validexis.com/validator-security-our-approach-and-protection-measures/tmkms-for-remote-signing/tmkms-for-celestia-v10-and-fibre) |
+| [`monitoring/`](monitoring) | Prometheus alert rules, OpenTelemetry Collector for Fibre | [Monitoring Celestia Validators and Fibre](https://services.validexis.com/monitoring/monitoring-celestia-validators-and-fibre) |
+
+All ecosystem tools, guides and endpoints: **[Tools.md](Tools.md)** · Platform: **[VALIDEXIS Celestia](https://celestia.validexis.com/new2/)**
+
+> Templates contain placeholders only. No addresses, keys or certificates are stored in this repository.
+
+---
+
 ## 🧩 Benchmark Node Resources  
 **Before installation — check your hardware.**  
 Use this script to test your server’s performance and verify whether it meets Celestia validator hardware requirements.  
